@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configuración · IBIZA NIGHT CLUB</title>
+    <!-- Orden de Atomic Design: variables, reset, átomos, moléculas, organismos, plantillas, páginas -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/atoms.css">
+    <link rel="stylesheet" href="../../css/molecules.css">
+    <link rel="stylesheet" href="../../css/organisms.css">
+    <link rel="stylesheet" href="../../css/templates.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+  </head>
+  <body class="plantilla-cuerpo">
+    <a class="atomo-enlace atomo-enlace--salto" href="#contenido">Saltar al contenido</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="atomo-sprite" aria-hidden="true">
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </symbol>
+      <symbol id="i-glass" viewBox="0 0 24 24">
+        <path d="M8 22h8M12 15v7M5 3h14l-7 12z"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M18 20V10M12 20V4M6 20v-6"/>
+      </symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <path d="M3 6h18"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <path d="M9 22V12h6v10"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+    </svg>
+    <div class="plantilla-administrativa">
+      <!-- ORGANISMO: menú lateral (cada rol tiene el suyo) -->
+      <aside class="organismo-menu-lateral" id="menu-lateral" aria-label="Menú lateral">
+        <a class="atomo-logo" href="../../index.html" aria-label="IBIZA NIGHT CLUB, ir al inicio"><span class="atomo-logo__marca"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span><span class="atomo-logo__nombre">IBIZA<span class="atomo-logo__subtitulo">NIGHT CLUB</span></span></a>
+        <nav aria-label="Menú principal">
+          <ul class="organismo-menu-lateral__lista">
+            <li><a class="organismo-menu-lateral__enlace" href="dashboard.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg><span>Dashboard</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="usuarios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><span>Usuarios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="clientes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Clientes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="empleados.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg><span>Empleados</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reservas.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Reservas</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="eventos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><span>Eventos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="servicios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg><span>Servicios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="compras.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-cart"/></svg><span>Compras</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="inventario.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-box"/></svg><span>Inventario</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="pedidos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg><span>Pedidos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reportes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><span>Reportes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace es-activo" href="configuracion.html" aria-current="page"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-gear"/></svg><span>Configuración</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="plantilla-administrativa__contenido">
+        <!-- ORGANISMO: encabezado con el usuario -->
+        <header class="organismo-encabezado">
+          <div class="organismo-encabezado__titulo">
+        <button class="atomo-boton atomo-boton--secundario organismo-encabezado__boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-lateral" aria-label="Abrir o cerrar el menú"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+        <strong class="organismo-encabezado__marca">IBIZA NIGHT CLUB</strong>
+      </div>
+          <div class="organismo-encabezado__usuario">
+        <span class="organismo-encabezado__nombre">Laura Martínez</span>
+        <span class="atomo-insignia atomo-insignia--neutra">Administrador</span>
+        <a class="atomo-boton atomo-boton--secundario atomo-boton--chico" href="../login.html" aria-label="Cerrar sesión"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-logout"/></svg><span class="organismo-encabezado__salir-texto">Cerrar sesión</span></a>
+      </div>
+        </header>
+        <main class="plantilla-administrativa__principal" id="contenido">
+          <h1 class="atomo-solo-lectores">Configuración</h1>
+          <section class="organismo-tarjeta" data-pestanas aria-labelledby="titulo-config">
+            <div class="organismo-tarjeta__titulo">
+              <h2 class="atomo-titulo--seccion" id="titulo-config">Matriz de permisos</h2>
+            </div>
+            <div class="organismo-pestanas__lista" role="tablist" aria-label="Secciones de configuración">
+  <button class="organismo-pestanas__boton es-activo" type="button" role="tab" id="pestana-acceso" aria-selected="true" aria-controls="panel-acceso">Acceso a módulos</button>
+  <button class="organismo-pestanas__boton" type="button" role="tab" id="pestana-acciones" aria-selected="false" aria-controls="panel-acciones" tabindex="-1">Acciones por módulo</button>
+</div>
+            <div role="tabpanel" id="panel-acceso" aria-labelledby="pestana-acceso">
+              <form class="plantilla-formulario" aria-label="Acceso a módulos por rol">
+                <div class="organismo-tabla__contenedor">
+                  <table class="organismo-tabla">
+                    <caption class="organismo-tabla__leyenda">Marca los módulos que puede ver cada rol.</caption>
+                    <thead>
+                      <tr>
+                        <th class="organismo-tabla__cabecera" scope="col">Módulo</th>
+                        <th class="organismo-tabla__cabecera" scope="col">Administrador</th>
+                        <th class="organismo-tabla__cabecera" scope="col">Empleado</th>
+                        <th class="organismo-tabla__cabecera" scope="col">Cliente</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Usuarios</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="usuarios-administrador" checked disabled aria-label="Usuarios para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="usuarios-empleado" aria-label="Usuarios para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="usuarios-cliente" aria-label="Usuarios para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Clientes</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="clientes-administrador" checked disabled aria-label="Clientes para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="clientes-empleado" checked aria-label="Clientes para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="clientes-cliente" aria-label="Clientes para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Empleados</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados-administrador" checked disabled aria-label="Empleados para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados-empleado" aria-label="Empleados para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados-cliente" aria-label="Empleados para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Reservas</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="reservas-administrador" checked disabled aria-label="Reservas para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="reservas-empleado" checked aria-label="Reservas para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="reservas-cliente" checked aria-label="Reservas para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Eventos</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="eventos-administrador" checked disabled aria-label="Eventos para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="eventos-empleado" checked aria-label="Eventos para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="eventos-cliente" checked aria-label="Eventos para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Servicios</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="servicios-administrador" checked disabled aria-label="Servicios para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="servicios-empleado" checked aria-label="Servicios para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="servicios-cliente" aria-label="Servicios para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Compras</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="compras-administrador" checked disabled aria-label="Compras para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="compras-empleado" checked aria-label="Compras para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="compras-cliente" aria-label="Compras para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Inventario</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="inventario-administrador" checked disabled aria-label="Inventario para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="inventario-empleado" checked aria-label="Inventario para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="inventario-cliente" aria-label="Inventario para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Pedidos</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="pedidos-administrador" checked disabled aria-label="Pedidos para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="pedidos-empleado" checked aria-label="Pedidos para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="pedidos-cliente" checked aria-label="Pedidos para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Mi perfil</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="mi-perfil-administrador" disabled aria-label="Mi perfil para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="mi-perfil-empleado" aria-label="Mi perfil para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="mi-perfil-cliente" checked aria-label="Mi perfil para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Reportes</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="reportes-administrador" checked disabled aria-label="Reportes para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="reportes-empleado" checked aria-label="Reportes para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="reportes-cliente" checked aria-label="Reportes para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                      <tr class="organismo-tabla__fila">
+                        <th class="organismo-tabla__celda organismo-tabla__celda--principal" scope="row">Configuración</th>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="configuraci-n-administrador" checked disabled aria-label="Configuración para administrador"><span class="molecula-casilla__texto">Administrador</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="configuraci-n-empleado" disabled aria-label="Configuración para empleado"><span class="molecula-casilla__texto">Empleado</span></label></td>
+                        <td class="organismo-tabla__celda"><label class="molecula-casilla pagina-configuracion__casilla"><input class="molecula-casilla__entrada" type="checkbox" name="configuraci-n-cliente" disabled aria-label="Configuración para cliente"><span class="molecula-casilla__texto">Cliente</span></label></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie"><button class="atomo-boton atomo-boton--secundario" type="reset">Restaurar permisos</button></div>
+              </form>
+            </div>
+            <div role="tabpanel" id="panel-acciones" aria-labelledby="pestana-acciones" hidden>
+              <div class="organismo-tabla__contenedor">
+                <table class="organismo-tabla">
+                  <caption class="atomo-solo-lectores">Acciones permitidas por módulo</caption>
+                  <thead>
+                    <tr>
+                      <th class="organismo-tabla__cabecera" scope="col">Módulo</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Agregar</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Editar</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Eliminar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Usuarios</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Clientes</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Empleados</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Reservas</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Eventos</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Servicios</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Compras</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Inventario</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Pedidos</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado, cliente</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado, cliente (los suyos pendientes)</td>
+                      <td class="organismo-tabla__celda">Administrador, empleado</td>
+                    </tr>
+                    <tr class="organismo-tabla__fila">
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Reportes</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                      <td class="organismo-tabla__celda">Administrador</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/pestanas.js" defer></script>
+  </body>
+</html>

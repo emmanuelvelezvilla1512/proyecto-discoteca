@@ -1,0 +1,373 @@
+/* ==========================================================================
+   organisms.css  —  ORGANISMOS (Atomic Design, nivel 3)
+   Bloques completos de interfaz: menú lateral, encabezado, tarjetas, tabla,
+   formulario, modal, pestañas y secciones de la página pública.
+   Usan variables, átomos y moléculas; nunca plantillas ni páginas.
+   ========================================================================== */
+
+/* Animaciones solo para quien no pidió reducir el movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes pulso {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.06); opacity: 0.4; }
+  }
+  .organismo-tarjeta,
+  .organismo-tarjeta-estadistica,
+  .organismo-modal__caja { animation: aparecer 320ms ease both; }
+}
+
+/* ---------- MENÚ LATERAL ---------- */
+.organismo-menu-lateral {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-5);
+  width: var(--ancho-menu);
+  padding: var(--esp-5) var(--esp-4);
+  overflow-y: auto;
+  background: linear-gradient(180deg, #120d20 0%, var(--color-negro) 100%);
+  border-right: 1px solid var(--color-borde);
+  transition: transform var(--transicion), visibility var(--transicion);
+}
+.organismo-menu-lateral__lista { display: grid; gap: var(--esp-1); }
+.organismo-menu-lateral__enlace {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid transparent;
+  border-radius: var(--radio-s);
+  color: var(--color-gris);
+  font-size: 0.93rem;
+  transition: background var(--transicion), color var(--transicion);
+}
+.organismo-menu-lateral__enlace:hover { background: rgba(90, 47, 160, 0.2); color: var(--color-blanco); }
+.organismo-menu-lateral__enlace.es-activo {
+  background: rgba(212, 175, 55, 0.1);
+  border-left-color: var(--color-dorado);
+  color: var(--color-dorado-claro);
+}
+
+
+
+/* ---------- ENCABEZADO ---------- */
+.organismo-encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  height: var(--alto-encabezado);
+  padding: 0 var(--esp-5);
+  background: rgba(7, 6, 11, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-borde);
+}
+.organismo-encabezado__titulo { display: flex; align-items: center; gap: var(--esp-3); min-width: 0; }
+.organismo-encabezado__marca { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.organismo-encabezado__usuario { display: flex; align-items: center; gap: var(--esp-3); font-size: 0.88rem; }
+.organismo-encabezado__boton-menu { display: none; padding: 0.4rem; }
+
+/* ---------- TARJETAS ---------- */
+.organismo-tarjeta {
+  min-width: 0;
+  padding: var(--esp-5);
+  background: var(--color-carbon);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  box-shadow: var(--sombra-suave);
+}
+.organismo-tarjeta__titulo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-3);
+  margin-bottom: var(--esp-4);
+}
+
+/* ---------- TARJETA DE ESTADÍSTICA ---------- */
+.organismo-tarjeta-estadistica {
+  display: grid;
+  min-width: 0;
+  gap: var(--esp-2);
+  padding: var(--esp-5);
+  background: var(--color-carbon);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  box-shadow: var(--sombra-suave);
+}
+.organismo-tarjeta-estadistica__icono {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: var(--radio-s);
+  background: rgba(90, 47, 160, 0.3);
+  color: var(--color-dorado-claro);
+  font-size: 1.2rem;
+}
+.organismo-tarjeta-estadistica__valor { font-family: var(--fuente-titulos); font-size: 2rem; line-height: 1; }
+.organismo-tarjeta-estadistica__texto { font-size: 0.85rem; color: var(--color-gris); }
+
+/* ---------- BARRA DE LISTADO (búsqueda y filtros) ---------- */
+.organismo-barra-listado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--esp-3);
+  align-items: end;
+  margin-bottom: var(--esp-4);
+}
+.organismo-barra-listado__buscador { grid-column: span 2; }
+
+/* ---------- TABLA ---------- */
+.organismo-tabla__contenedor { overflow-x: auto; }
+.organismo-tabla { min-width: 38rem; font-size: 0.9rem; }
+.organismo-tabla--ancha { min-width: 60rem; }
+.organismo-tabla__leyenda { padding-bottom: var(--esp-2); text-align: left; font-size: 0.82rem; color: var(--color-gris); }
+.organismo-tabla__cabecera {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid var(--color-borde);
+  text-align: left;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-dorado-claro);
+}
+.organismo-tabla__celda {
+  padding: 0.75rem 0.8rem;
+  border-bottom: 1px solid var(--color-borde);
+  vertical-align: middle;
+}
+.organismo-tabla__celda--principal { font-weight: 600; color: var(--color-blanco); }
+.organismo-tabla__celda--fecha { white-space: nowrap; }
+.organismo-tabla__celda--acciones { white-space: nowrap; }
+.organismo-tabla__fila:hover { background: rgba(255, 255, 255, 0.025); }
+.organismo-tabla__acciones { display: flex; flex-wrap: nowrap; gap: var(--esp-2); }
+
+/* ---------- FORMULARIO ---------- */
+.organismo-formulario { display: grid; }
+.organismo-formulario__rejilla {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--esp-4);
+}
+.organismo-formulario__pie { margin-top: var(--esp-4); }
+
+/* ---------- MODAL ---------- */
+.organismo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  place-items: center;
+  padding: var(--esp-4);
+  background: rgba(4, 3, 8, 0.75);
+  backdrop-filter: blur(3px);
+}
+.organismo-modal.esta-abierto { display: grid; }
+.organismo-modal__caja {
+  width: min(44rem, 100%);
+  max-height: calc(100vh - 2rem);
+  padding: var(--esp-5);
+  overflow-y: auto;
+  background: var(--color-carbon);
+  color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-l);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+.organismo-modal__caja--pequena { width: min(28rem, 100%); }
+.organismo-modal__cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--esp-3); margin-bottom: var(--esp-4); }
+.organismo-modal__pie { margin-top: var(--esp-4); }
+
+/* ---------- PESTAÑAS ---------- */
+.organismo-pestanas__lista { display: flex; flex-wrap: wrap; gap: var(--esp-2); margin-bottom: var(--esp-4); border-bottom: 1px solid var(--color-borde); }
+.organismo-pestanas__boton {
+  padding: 0.6rem 1rem;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--color-gris);
+  font-weight: 600;
+}
+.organismo-pestanas__boton:hover { color: var(--color-blanco); }
+.organismo-pestanas__boton.es-activo { border-bottom-color: var(--color-dorado); color: var(--color-dorado-claro); }
+
+/* ---------- TARJETAS DE EVENTO Y DE SERVICIO (página pública) ---------- */
+.organismo-evento-tarjeta {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  align-items: start;
+  gap: var(--esp-4);
+  padding: var(--esp-5);
+  background: var(--color-carbon);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+}
+.organismo-evento-tarjeta__fecha {
+  display: grid;
+  place-items: center;
+  padding: var(--esp-2);
+  border-radius: var(--radio-m);
+  background: rgba(90, 47, 160, 0.3);
+  color: var(--color-dorado-claro);
+  font-size: 0.8rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.organismo-evento-tarjeta__dia { font-family: var(--fuente-titulos); font-size: 1.8rem; }
+.organismo-evento-tarjeta__cuerpo { display: grid; gap: var(--esp-1); min-width: 0; }
+.organismo-evento-tarjeta__datos { font-size: 0.85rem; color: var(--color-dorado-claro); }
+
+.organismo-servicio-tarjeta {
+  display: grid;
+  gap: var(--esp-2);
+  padding: var(--esp-5);
+  background: var(--color-carbon);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+}
+.organismo-servicio-tarjeta__icono {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: var(--radio-s);
+  background: rgba(90, 47, 160, 0.3);
+  color: var(--color-dorado-claro);
+  font-size: 1.2rem;
+}
+.organismo-servicio-tarjeta__texto { font-size: 0.92rem; color: var(--color-gris); }
+
+/* ---------- CABECERA, PORTADA Y PIE DE LA PÁGINA PÚBLICA ---------- */
+.organismo-cabecera-publica {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  padding: var(--esp-3) clamp(1rem, 5vw, 4rem);
+  background: rgba(7, 6, 11, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-borde);
+}
+.organismo-cabecera-publica__navegacion { display: flex; gap: var(--esp-5); }
+.organismo-cabecera-publica__enlace { font-size: 0.92rem; color: var(--color-gris); }
+.organismo-cabecera-publica__enlace:hover { color: var(--color-dorado-claro); }
+.organismo-cabecera-publica__acciones { display: flex; flex-wrap: wrap; gap: var(--esp-2); }
+
+.organismo-portada {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 12vw, 9rem) clamp(1rem, 5vw, 4rem);
+  background:
+    radial-gradient(60rem 40rem at 10% 0%, rgba(90, 47, 160, 0.55), transparent 60%),
+    radial-gradient(40rem 30rem at 100% 100%, rgba(212, 175, 55, 0.16), transparent 60%),
+    var(--color-negro);
+  border-bottom: 1px solid var(--color-borde);
+}
+.organismo-portada::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -8rem;
+  width: 28rem;
+  height: 28rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.organismo-portada__contenido { position: relative; z-index: 1; max-width: 40rem; }
+.organismo-portada__titulo { margin-bottom: var(--esp-4); font-size: clamp(2.6rem, 7vw, 4.6rem); }
+.organismo-portada__resalte { color: var(--color-dorado); }
+.organismo-portada__texto { margin-bottom: var(--esp-5); font-size: 1.1rem; color: var(--color-gris); }
+
+.organismo-pie-publico {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--esp-3);
+  padding: var(--esp-5) clamp(1rem, 5vw, 4rem);
+  background: var(--color-carbon);
+  border-top: 1px solid var(--color-borde);
+  font-size: 0.82rem;
+  color: var(--color-gris);
+}
+
+/* ---------- PANEL DE MARCA (lado izquierdo de las pantallas de acceso) ---------- */
+.organismo-panel-marca {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--esp-6);
+  padding: var(--esp-7) var(--esp-7) var(--esp-5);
+  overflow: hidden;
+  background:
+    radial-gradient(60rem 40rem at 10% 0%, rgba(90, 47, 160, 0.55), transparent 60%),
+    radial-gradient(40rem 30rem at 100% 100%, rgba(212, 175, 55, 0.14), transparent 60%),
+    var(--color-negro);
+  border-right: 1px solid var(--color-borde);
+}
+.organismo-panel-marca::before,
+.organismo-panel-marca::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.organismo-panel-marca::before { top: 22%; right: -9rem; width: 26rem; height: 26rem; border: 1px solid rgba(212, 175, 55, 0.22); }
+.organismo-panel-marca::after { top: 34%; right: -2rem; width: 15rem; height: 15rem; border: 1px solid rgba(90, 47, 160, 0.5); }
+.organismo-panel-marca__frase { position: relative; z-index: 1; max-width: 30rem; }
+.organismo-panel-marca__titulo { margin-bottom: var(--esp-4); font-size: clamp(2.2rem, 4vw, 3.4rem); }
+.organismo-panel-marca__resalte { color: var(--color-dorado); }
+.organismo-panel-marca__texto { font-size: 1.02rem; color: var(--color-gris); }
+.organismo-panel-marca__pie { position: relative; z-index: 1; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--color-gris); }
+
+/* ================= Adaptación a pantallas más pequeñas ================= */
+@media (prefers-reduced-motion: no-preference) {
+  .organismo-panel-marca::before { animation: pulso 7s ease-in-out infinite; }
+  .organismo-panel-marca::after { animation: pulso 7s ease-in-out infinite 1.5s; }
+}
+
+@media (max-width: 1100px) {
+  .organismo-barra-listado__buscador { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
+  /* El menú lateral pasa a ser un panel deslizable que se abre con el botón del encabezado */
+  .organismo-menu-lateral { visibility: hidden; transform: translateX(-100%); box-shadow: var(--sombra-suave); }
+  .organismo-menu-lateral.esta-abierto { visibility: visible; transform: none; }
+  .organismo-encabezado__boton-menu { display: inline-flex; }
+  .organismo-panel-marca { padding: var(--esp-5); gap: var(--esp-4); }
+  .organismo-panel-marca::before,
+  .organismo-panel-marca::after { display: none; }
+  .organismo-panel-marca__titulo { font-size: 2rem; }
+}
+
+@media (max-width: 760px) {
+  .organismo-cabecera-publica__navegacion { display: none; }
+  .organismo-portada::after { display: none; }
+  .organismo-evento-tarjeta { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .organismo-encabezado { padding: 0 var(--esp-4); }
+  .organismo-encabezado__nombre,
+  .organismo-encabezado__salir-texto { display: none; }
+  .organismo-encabezado__marca { font-size: 0.85rem; }
+  .organismo-formulario__rejilla { grid-template-columns: 1fr; }
+  .organismo-barra-listado { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,19 @@
+/* ==========================================================================
+   pages.css  —  PÁGINAS (Atomic Design, nivel 5)
+   Solo ajustes propios de una página concreta. Todo lo demás vive en los
+   niveles anteriores.
+   ========================================================================== */
+
+/* Inicio del cliente: saludo de bienvenida */
+.pagina-cliente__saludo { font-size: 1.3rem; }
+
+/* Inicio público: la lista de contacto va dentro de una tarjeta */
+.pagina-inicio__contacto { display: grid; gap: var(--esp-2); }
+
+/* Configuración: la tabla de permisos centra las casillas */
+.pagina-configuracion__casilla { justify-content: flex-start; }
+
+/* Perfil del cliente: el botón de actualizar no ocupa todo el ancho en móvil */
+@media (max-width: 600px) {
+  .pagina-perfil__acciones { width: 100%; }
+}

@@ -1,0 +1,79 @@
+/* ==========================================================================
+   templates.css  —  PLANTILLAS (Atomic Design, nivel 4)
+   Estructura de página: autenticación (dos paneles), administrativa
+   (menú + encabezado + contenido), listado, formulario y página pública.
+   Solo colocan organismos en la página; no definen su aspecto interno.
+   ========================================================================== */
+
+/* El body de cada página lleva la clase "cuerpo"; se bloquea el scroll con un modal abierto */
+.plantilla-cuerpo { min-height: 100vh; }
+.plantilla-cuerpo.esta-bloqueado { overflow: hidden; }
+
+/* ---------- Rejillas reutilizables ---------- */
+.plantilla-rejilla { display: grid; gap: var(--esp-4) }
+.plantilla-rejilla--dos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.plantilla-rejilla--tres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.plantilla-rejilla--cuatro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* ---------- PLANTILLA DE AUTENTICACIÓN ---------- */
+.plantilla-autenticacion {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  min-height: 100vh;
+}
+.plantilla-autenticacion__panel {
+  display: grid;
+  place-items: center;
+  padding: var(--esp-5);
+  background: var(--color-carbon);
+}
+.plantilla-autenticacion__caja { width: min(26rem, 100%); }
+.plantilla-autenticacion__caja--ancha { width: min(36rem, 100%); }
+.plantilla-autenticacion__intro { margin-bottom: var(--esp-4); font-size: 0.92rem; }
+
+/* ---------- PLANTILLA ADMINISTRATIVA ---------- */
+.plantilla-administrativa { min-height: 100vh; }
+.plantilla-administrativa__contenido { min-height: 100vh; margin-left: var(--ancho-menu); }
+.plantilla-administrativa__principal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--esp-5);
+  max-width: 80rem;
+  padding: var(--esp-5);
+}
+
+/* ---------- PLANTILLA DE LISTADO ---------- */
+.plantilla-listado { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--esp-4); min-width: 0; }
+
+/* ---------- PLANTILLA DE FORMULARIO ---------- */
+.plantilla-formulario { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--esp-4); }
+
+/* ---------- PLANTILLA PÚBLICA ---------- */
+.plantilla-publica__seccion { max-width: 80rem; margin: 0 auto; padding: var(--esp-7) clamp(1rem, 5vw, 4rem); }
+.plantilla-publica__titulo { margin-bottom: var(--esp-5); font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.plantilla-publica__titulo::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: var(--esp-2);
+  background: var(--color-dorado);
+}
+
+@media (max-width: 1100px) {
+  .plantilla-rejilla--cuatro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .plantilla-autenticacion { grid-template-columns: 1fr; }
+  .plantilla-administrativa__contenido { margin-left: 0; }
+  .plantilla-rejilla--tres { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .plantilla-administrativa__principal { padding: var(--esp-4); }
+  .plantilla-autenticacion__panel { padding: var(--esp-4); }
+  .plantilla-rejilla--dos,
+  .plantilla-rejilla--tres,
+  .plantilla-rejilla--cuatro { grid-template-columns: 1fr; }
+}

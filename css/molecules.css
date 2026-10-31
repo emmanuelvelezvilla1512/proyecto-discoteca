@@ -1,0 +1,103 @@
+/* ==========================================================================
+   molecules.css  —  MOLÉCULAS (Atomic Design, nivel 2)
+   Combinan átomos: campo completo, buscador, grupo de botones, aviso,
+   casilla, lista de detalle y datos de contacto.
+   Solo dependen de variables y de átomos.
+   ========================================================================== */
+
+/* ---- Campo completo: etiqueta + control + ayuda + mensaje de error ---- */
+.molecula-campo-completo { margin-bottom: var(--esp-4); }
+.molecula-campo-completo--ancho { grid-column: 1 / -1; }
+.molecula-campo-completo__ayuda { margin-top: var(--esp-1); font-size: 0.8rem; color: var(--color-gris); }
+/* El mensaje de error está escrito en el HTML y solo se ve si el campo anterior es inválido */
+.molecula-campo-completo__error {
+  display: none;
+  margin-top: var(--esp-1);
+  font-size: 0.8rem;
+  color: var(--estado-error);
+}
+.atomo-campo:user-invalid ~ .molecula-campo-completo__error { display: block; }
+
+/* ---- Buscador: ícono + campo ---- */
+.molecula-buscador { position: relative; }
+.molecula-buscador__icono {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gris);
+  pointer-events: none;
+  
+}
+
+.molecula-buscador__campo {
+  width: 100%;
+  padding: 0.65rem 0.8rem 0.65rem 2.4rem;
+  background: var(--color-carbon-2);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-s);
+  color: var(--color-blanco);
+}
+.molecula-buscador__campo:focus { border-color: var(--color-dorado); box-shadow: var(--sombra-dorada); outline: none; }
+
+/* ---- Grupo de botones ---- */
+.molecula-grupo-botones { display: flex; flex-wrap: wrap; gap: var(--esp-2); }
+.molecula-grupo-botones--derecha { justify-content: flex-end; }
+
+/* ---- Aviso (mensaje en caja) ---- */
+.molecula-aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--esp-3);
+  padding: var(--esp-3) var(--esp-4);
+  background: var(--color-carbon);
+  border: 1px solid var(--color-borde);
+  border-left-width: 4px;
+  border-radius: var(--radio-s);
+  font-size: 0.88rem;
+  color: var(--color-gris);
+}
+.molecula-aviso__texto { flex: 1; }
+.molecula-aviso--info { border-left-color: var(--estado-proceso); }
+.molecula-aviso--error { border-left-color: var(--estado-error); }
+.molecula-aviso--exito { border-left-color: var(--estado-ok); }
+.molecula-aviso.esta-oculto { display: none; }
+
+/* ---- Casilla (checkbox + texto) ---- */
+.molecula-casilla { display: flex; align-items: center; gap: var(--esp-2); font-size: 0.9rem; cursor: pointer; }
+.molecula-casilla__entrada { width: 1rem; height: 1rem; accent-color: var(--color-dorado); }
+.molecula-casilla__texto { color: var(--color-blanco); }
+.molecula-grupo-casillas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: var(--esp-2);
+  padding: var(--esp-3);
+  background: var(--color-carbon-2);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-s);
+}
+
+/* ---- Lista de detalle (término + valor) ---- */
+.molecula-detalle { display: grid; gap: var(--esp-3); }
+.molecula-detalle__fila { display: grid; grid-template-columns: 10rem 1fr; gap: var(--esp-3); font-size: 0.92rem; }
+.molecula-detalle__termino { color: var(--color-gris); }
+.molecula-detalle__valor { margin: 0; }
+
+/* ---- Dato de contacto ---- */
+.molecula-dato { margin-bottom: var(--esp-3); }
+.molecula-dato__termino { color: var(--color-gris); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.molecula-dato__valor { margin: 0; font-size: 1.02rem; }
+
+/* ---- Enlaces auxiliares de las pantallas de acceso ---- */
+.molecula-enlaces-auxiliares {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--esp-2);
+  margin-top: var(--esp-4);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 600px) {
+  .molecula-detalle__fila { grid-template-columns: 1fr; gap: 0; }
+}

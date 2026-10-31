@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Compras · IBIZA NIGHT CLUB</title>
+    <!-- Orden de Atomic Design: variables, reset, átomos, moléculas, organismos, plantillas, páginas -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/atoms.css">
+    <link rel="stylesheet" href="../../css/molecules.css">
+    <link rel="stylesheet" href="../../css/organisms.css">
+    <link rel="stylesheet" href="../../css/templates.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+  </head>
+  <body class="plantilla-cuerpo">
+    <a class="atomo-enlace atomo-enlace--salto" href="#contenido">Saltar al contenido</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="atomo-sprite" aria-hidden="true">
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </symbol>
+      <symbol id="i-glass" viewBox="0 0 24 24">
+        <path d="M8 22h8M12 15v7M5 3h14l-7 12z"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M18 20V10M12 20V4M6 20v-6"/>
+      </symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <path d="M3 6h18"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <path d="M9 22V12h6v10"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+    </svg>
+    <div class="plantilla-administrativa">
+      <!-- ORGANISMO: menú lateral (cada rol tiene el suyo) -->
+      <aside class="organismo-menu-lateral" id="menu-lateral" aria-label="Menú lateral">
+        <a class="atomo-logo" href="../../index.html" aria-label="IBIZA NIGHT CLUB, ir al inicio"><span class="atomo-logo__marca"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span><span class="atomo-logo__nombre">IBIZA<span class="atomo-logo__subtitulo">NIGHT CLUB</span></span></a>
+        <nav aria-label="Menú principal">
+          <ul class="organismo-menu-lateral__lista">
+            <li><a class="organismo-menu-lateral__enlace" href="dashboard.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg><span>Dashboard</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="usuarios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><span>Usuarios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="clientes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Clientes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="empleados.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg><span>Empleados</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reservas.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Reservas</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="eventos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><span>Eventos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="servicios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg><span>Servicios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace es-activo" href="compras.html" aria-current="page"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-cart"/></svg><span>Compras</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="inventario.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-box"/></svg><span>Inventario</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="pedidos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg><span>Pedidos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reportes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><span>Reportes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="configuracion.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-gear"/></svg><span>Configuración</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="plantilla-administrativa__contenido">
+        <!-- ORGANISMO: encabezado con el usuario -->
+        <header class="organismo-encabezado">
+          <div class="organismo-encabezado__titulo">
+        <button class="atomo-boton atomo-boton--secundario organismo-encabezado__boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-lateral" aria-label="Abrir o cerrar el menú"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+        <strong class="organismo-encabezado__marca">IBIZA NIGHT CLUB</strong>
+      </div>
+          <div class="organismo-encabezado__usuario">
+        <span class="organismo-encabezado__nombre">Laura Martínez</span>
+        <span class="atomo-insignia atomo-insignia--neutra">Administrador</span>
+        <a class="atomo-boton atomo-boton--secundario atomo-boton--chico" href="../login.html" aria-label="Cerrar sesión"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-logout"/></svg><span class="organismo-encabezado__salir-texto">Cerrar sesión</span></a>
+      </div>
+        </header>
+        <main class="plantilla-administrativa__principal" id="contenido">
+          <h1 class="atomo-solo-lectores">Compras</h1>
+          <div class="plantilla-listado">
+            <section class="organismo-tarjeta" aria-labelledby="titulo-compras">
+              <div class="organismo-tarjeta__titulo">
+                <h2 class="atomo-titulo--seccion" id="titulo-compras">Compras</h2>
+                <button class="atomo-boton atomo-boton--primario" type="button" data-modal-abrir="modal-compras-agregar" aria-haspopup="dialog" aria-controls="modal-compras-agregar" aria-expanded="false">Agregar compra</button>
+              </div>
+              <div class="organismo-barra-listado">
+                <div class="organismo-barra-listado__buscador">
+                  <label class="atomo-etiqueta" for="buscar-compras">Buscar</label>
+                  <div class="molecula-buscador">
+                    <svg class="atomo-icono molecula-buscador__icono" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
+                    <input class="molecula-buscador__campo" id="buscar-compras" type="search" placeholder="Buscar en compras…" data-filtrar="tabla-compras">
+                  </div>
+                </div>
+                <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="filtro-compras-0">Estado</label><select class="atomo-campo" id="filtro-compras-0" data-filtrar="tabla-compras" data-filtrar-columna="4"><option class="atomo-campo__opcion" value="">Todos</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada">Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+              </div>
+              <div class="organismo-tabla__contenedor">
+                <table class="organismo-tabla" id="tabla-compras" aria-labelledby="titulo-compras">
+                  <thead>
+                    <tr>
+                      <th class="organismo-tabla__cabecera" scope="col">Cliente</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Producto o servicio</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Fecha</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Total</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Estado</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-001" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mariana Zapata</td>
+                      <td class="organismo-tabla__celda">Whisky Old Parr 12 años</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">23 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 210.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-001" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-001" aria-expanded="false" aria-label="Ver compra COM-001">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-001" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-001" aria-expanded="false" aria-label="Editar compra COM-001">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-001" aria-label="Eliminar compra COM-001">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-002" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mariana Zapata</td>
+                      <td class="organismo-tabla__celda">Mesa VIP</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">16 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 350.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-002" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-002" aria-expanded="false" aria-label="Ver compra COM-002">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-002" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-002" aria-expanded="false" aria-label="Editar compra COM-002">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-002" aria-label="Eliminar compra COM-002">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-003" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Juan Pablo Duque</td>
+                      <td class="organismo-tabla__celda">Aguardiente Antioqueño (botella)</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">24 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 285.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-003" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-003" aria-expanded="false" aria-label="Ver compra COM-003">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-003" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-003" aria-expanded="false" aria-label="Editar compra COM-003">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-003" aria-label="Eliminar compra COM-003">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-004" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Sofía Henao</td>
+                      <td class="organismo-tabla__celda">Cumpleaños VIP</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">25 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 1.500.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-004" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-004" aria-expanded="false" aria-label="Ver compra COM-004">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-004" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-004" aria-expanded="false" aria-label="Editar compra COM-004">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-004" aria-label="Eliminar compra COM-004">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-005" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Santiago Ríos</td>
+                      <td class="organismo-tabla__celda">Champagne Moët &amp; Chandon</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">19 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 480.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-005" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-005" aria-expanded="false" aria-label="Ver compra COM-005">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-005" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-005" aria-expanded="false" aria-label="Editar compra COM-005">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-005" aria-label="Eliminar compra COM-005">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-006" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Manuela Echeverri</td>
+                      <td class="organismo-tabla__celda">Sala privada</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">11 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 1.200.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-006" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-006" aria-expanded="false" aria-label="Ver compra COM-006">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-006" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-006" aria-expanded="false" aria-label="Editar compra COM-006">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-006" aria-label="Eliminar compra COM-006">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-007" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mariana Zapata</td>
+                      <td class="organismo-tabla__celda">Ron Medellín 8 años</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">26 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 240.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-007" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-007" aria-expanded="false" aria-label="Ver compra COM-007">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-007" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-007" aria-expanded="false" aria-label="Editar compra COM-007">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-007" aria-label="Eliminar compra COM-007">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-008" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Tomás Giraldo</td>
+                      <td class="organismo-tabla__celda">Cerveza Club Colombia (caja x24)</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">06 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 180.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--error">Cancelada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-008" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-008" aria-expanded="false" aria-label="Ver compra COM-008">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-008" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-008" aria-expanded="false" aria-label="Editar compra COM-008">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-008" aria-label="Eliminar compra COM-008">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-009" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Luciana Mesa</td>
+                      <td class="organismo-tabla__celda">Servicio de botella</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">22 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 600.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-009" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-009" aria-expanded="false" aria-label="Ver compra COM-009">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-009" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-009" aria-expanded="false" aria-label="Editar compra COM-009">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-009" aria-label="Eliminar compra COM-009">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-compras-com-010" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Esteban Cadavid</td>
+                      <td class="organismo-tabla__celda">Coctelería premium</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">17 oct 2026</td>
+                      <td class="organismo-tabla__celda">$ 800.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-ver-com-010" aria-haspopup="dialog" aria-controls="modal-compras-ver-com-010" aria-expanded="false" aria-label="Ver compra COM-010">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-compras-editar-com-010" aria-haspopup="dialog" aria-controls="modal-compras-editar-com-010" aria-expanded="false" aria-label="Editar compra COM-010">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-compras-com-010" aria-label="Eliminar compra COM-010">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" data-sin-resultados hidden>
+                      <td class="organismo-tabla__celda" colspan="6">No se encontraron registros con los criterios indicados.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-agregar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-agregar-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-agregar-titulo">Agregar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-agregar" data-modal-formulario aria-label="Agregar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-compras-clienteId">Cliente</label><select class="atomo-campo" id="a-compras-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-compras-item">Producto o servicio</label><select class="atomo-campo" id="a-compras-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-compras-cantidad">Cantidad</label><input class="atomo-campo" id="a-compras-cantidad" name="cantidad" type="number" required min="1" max="1000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-compras-fecha">Fecha de compra</label><input class="atomo-campo" id="a-compras-fecha" name="fecha" type="date" required></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-compras-metodoPago">Método de pago</label><select class="atomo-campo" id="a-compras-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta">Tarjeta</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-001" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-001-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-001-titulo">Compra: COM-001</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-001</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Mariana Zapata</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Whisky Old Parr 12 años</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 210.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">23 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Efectivo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-001" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-001-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-001-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-001" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-001-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-001-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01" selected>Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-001-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-001-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002" selected>Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-001-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-001-cantidad" name="cantidad" type="number" required min="1" max="1000" value="1"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-001-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-001-fecha" name="fecha" type="date" required value="2026-10-23"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-001-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-001-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo" selected>Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta">Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-001-estado">Estado</label><select class="atomo-campo" id="e-compras-com-001-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada" selected>Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-002" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-002-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-002-titulo">Compra: COM-002</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-002</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Mariana Zapata</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Mesa VIP</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 350.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">16 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Tarjeta</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-002" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-002-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-002-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-002" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-002-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-002-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01" selected>Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-002-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-002-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01" selected>Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-002-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-002-cantidad" name="cantidad" type="number" required min="1" max="1000" value="1"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-002-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-002-fecha" name="fecha" type="date" required value="2026-10-16"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-002-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-002-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta" selected>Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-002-estado">Estado</label><select class="atomo-campo" id="e-compras-com-002-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada" selected>Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-003" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-003-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-003-titulo">Compra: COM-003</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-003</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Juan Pablo Duque</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Aguardiente Antioqueño (botella)</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">3</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 285.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">24 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Efectivo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-003" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-003-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-003-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-003" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-003-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-003-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02" selected>Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-003-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-003-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001" selected>Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-003-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-003-cantidad" name="cantidad" type="number" required min="1" max="1000" value="3"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-003-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-003-fecha" name="fecha" type="date" required value="2026-10-24"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-003-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-003-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo" selected>Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta">Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-003-estado">Estado</label><select class="atomo-campo" id="e-compras-com-003-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada" selected>Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-004" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-004-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-004-titulo">Compra: COM-004</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-004</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Sofía Henao</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Cumpleaños VIP</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 1.500.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">25 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Transferencia</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-004" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-004-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-004-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-004" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-004-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-004-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03" selected>Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-004-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-004-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09" selected>Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-004-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-004-cantidad" name="cantidad" type="number" required min="1" max="1000" value="1"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-004-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-004-fecha" name="fecha" type="date" required value="2026-10-25"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-004-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-004-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia" selected>Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta">Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-004-estado">Estado</label><select class="atomo-campo" id="e-compras-com-004-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="Pagada">Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-005" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-005-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-005-titulo">Compra: COM-005</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-005</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Santiago Ríos</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Champagne Moët &amp; Chandon</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 480.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">19 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Tarjeta</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-005" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-005-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-005-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-005" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-005-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-005-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04" selected>Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-005-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-005-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005" selected>Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-005-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-005-cantidad" name="cantidad" type="number" required min="1" max="1000" value="1"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-005-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-005-fecha" name="fecha" type="date" required value="2026-10-19"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-005-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-005-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta" selected>Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-005-estado">Estado</label><select class="atomo-campo" id="e-compras-com-005-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada" selected>Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-006" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-006-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-006-titulo">Compra: COM-006</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-006</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Manuela Echeverri</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Sala privada</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 1.200.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">11 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Transferencia</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-006" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-006-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-006-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-006" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-006-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-006-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05" selected>Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-006-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-006-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02" selected>Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-006-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-006-cantidad" name="cantidad" type="number" required min="1" max="1000" value="1"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-006-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-006-fecha" name="fecha" type="date" required value="2026-10-11"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-006-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-006-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia" selected>Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta">Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-006-estado">Estado</label><select class="atomo-campo" id="e-compras-com-006-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada" selected>Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-007" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-007-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-007-titulo">Compra: COM-007</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-007</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Mariana Zapata</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Ron Medellín 8 años</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">2</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 240.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">26 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Tarjeta</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-007" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-007-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-007-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-007" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-007-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-007-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01" selected>Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-007-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-007-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003" selected>Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-007-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-007-cantidad" name="cantidad" type="number" required min="1" max="1000" value="2"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-007-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-007-fecha" name="fecha" type="date" required value="2026-10-26"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-007-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-007-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta" selected>Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-007-estado">Estado</label><select class="atomo-campo" id="e-compras-com-007-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="Pagada">Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-008" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-008-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-008-titulo">Compra: COM-008</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-008</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Tomás Giraldo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Cerveza Club Colombia (caja x24)</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">2</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 180.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">06 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Efectivo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--error">Cancelada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-008" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-008-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-008-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-008" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-008-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-008-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06" selected>Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-008-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-008-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006" selected>Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-008-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-008-cantidad" name="cantidad" type="number" required min="1" max="1000" value="2"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-008-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-008-fecha" name="fecha" type="date" required value="2026-10-06"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-008-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-008-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo" selected>Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta">Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-008-estado">Estado</label><select class="atomo-campo" id="e-compras-com-008-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada">Pagada</option><option class="atomo-campo__opcion" value="Cancelada" selected>Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-009" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-009-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-009-titulo">Compra: COM-009</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-009</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Luciana Mesa</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Servicio de botella</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">4</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 600.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">22 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Tarjeta</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-009" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-009-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-009-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-009" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-009-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-009-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07" selected>Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-009-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-009-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04">Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08" selected>Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-009-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-009-cantidad" name="cantidad" type="number" required min="1" max="1000" value="4"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-009-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-009-fecha" name="fecha" type="date" required value="2026-10-22"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-009-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-009-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia">Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta" selected>Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-009-estado">Estado</label><select class="atomo-campo" id="e-compras-com-009-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada" selected>Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-ver-com-010" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-ver-com-010-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-ver-com-010-titulo">Compra: COM-010</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Compra</dt>
+            <dd class="molecula-detalle__valor">COM-010</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Esteban Cadavid</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Producto o servicio</dt>
+            <dd class="molecula-detalle__valor">Coctelería premium</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cantidad</dt>
+            <dd class="molecula-detalle__valor">1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Total</dt>
+            <dd class="molecula-detalle__valor">$ 800.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">17 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Método de pago</dt>
+            <dd class="molecula-detalle__valor">Transferencia</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Pagada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-compras-editar-com-010" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-compras-editar-com-010-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-compras-editar-com-010-titulo">Editar compra</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-compras-editar-com-010" data-modal-formulario aria-label="Editar compra">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-010-clienteId">Cliente</label><select class="atomo-campo" id="e-compras-com-010-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10" selected>Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-010-item">Producto o servicio</label><select class="atomo-campo" id="e-compras-com-010-item" name="item" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><optgroup label="Productos"><option class="atomo-campo__opcion" value="producto:INV-001">Aguardiente Antioqueño (botella)</option><option class="atomo-campo__opcion" value="producto:INV-002">Whisky Old Parr 12 años</option><option class="atomo-campo__opcion" value="producto:INV-003">Ron Medellín 8 años</option><option class="atomo-campo__opcion" value="producto:INV-004">Vodka Absolut</option><option class="atomo-campo__opcion" value="producto:INV-005">Champagne Moët &amp; Chandon</option><option class="atomo-campo__opcion" value="producto:INV-006">Cerveza Club Colombia (caja x24)</option><option class="atomo-campo__opcion" value="producto:INV-007">Agua mineral (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-008">Mezcladores y gaseosas (paquete)</option><option class="atomo-campo__opcion" value="producto:INV-009">Hielo (bolsa de 5 kg)</option><option class="atomo-campo__opcion" value="producto:INV-010">Tequila Don Julio 70</option></optgroup><optgroup label="Servicios"><option class="atomo-campo__opcion" value="servicio:SRV-01">Mesa VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-02">Sala privada</option><option class="atomo-campo__opcion" value="servicio:SRV-03">DJ invitado</option><option class="atomo-campo__opcion" value="servicio:SRV-04" selected>Coctelería premium</option><option class="atomo-campo__opcion" value="servicio:SRV-05">Seguridad y acceso</option><option class="atomo-campo__opcion" value="servicio:SRV-06">Decoración temática</option><option class="atomo-campo__opcion" value="servicio:SRV-07">Fotografía y video</option><option class="atomo-campo__opcion" value="servicio:SRV-08">Servicio de botella</option><option class="atomo-campo__opcion" value="servicio:SRV-09">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="servicio:SRV-10">Fiesta privada</option></optgroup></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-010-cantidad">Cantidad</label><input class="atomo-campo" id="e-compras-com-010-cantidad" name="cantidad" type="number" required min="1" max="1000" value="1"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-010-fecha">Fecha de compra</label><input class="atomo-campo" id="e-compras-com-010-fecha" name="fecha" type="date" required value="2026-10-17"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-010-metodoPago">Método de pago</label><select class="atomo-campo" id="e-compras-com-010-metodoPago" name="metodoPago" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Efectivo">Efectivo</option><option class="atomo-campo__opcion" value="Transferencia" selected>Transferencia</option><option class="atomo-campo__opcion" value="Tarjeta">Tarjeta</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-compras-com-010-estado">Estado</label><select class="atomo-campo" id="e-compras-com-010-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Pagada" selected>Pagada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eliminar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eliminar-titulo">
+      <div class="organismo-modal__caja organismo-modal__caja--pequena" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eliminar-titulo">Eliminar registro</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <p class="atomo-texto--secundario">¿Seguro que quieres eliminar este registro? Esta acción no se puede deshacer.</p>
+        <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-modal__pie">
+      <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+      <button class="atomo-boton atomo-boton--peligro" type="button" data-eliminar-confirmar>Eliminar</button>
+    </div>
+      </div>
+    </div>
+    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/modales.js" defer></script>
+    <script src="../../js/buscador.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+/* ==========================================================================
+   variables.css
+   Paleta corporativa, tipografía, espaciados y sombras (RNF-003: colores
+   corporativos del club). Todo el sistema consume estas variables, así que
+   un cambio de marca se hace únicamente aquí.
+   ========================================================================== */
+
+:root {
+  /* ---- Paleta nocturna ---- */
+  --color-negro:        #07060b;  /* Fondo principal, negro profundo */
+  --color-carbon:       #17171d;  /* Superficies: tarjetas y paneles */
+  --color-carbon-2:     #20202a;  /* Superficies elevadas y campos */
+  --color-violeta:      #3b1d6b;  /* Violeta oscuro (identidad de marca) */
+  --color-violeta-2:    #5a2fa0;  /* Violeta para estados hover/activo */
+  --color-dorado:       #d4af37;  /* Acento dorado */
+  --color-dorado-claro: #ecd27a;  /* Dorado para texto destacado */
+  --color-blanco:       #f6f3ec;  /* Texto principal */
+  --color-gris:         #b4b1bf;  /* Texto secundario (contraste AA sobre fondo oscuro) */
+  --color-borde:        #2e2e3a;  /* Bordes discretos */
+
+  /* ---- Colores semánticos de estado ---- */
+  --estado-ok:      #4cc38a;   /* Completado / Activo */
+  --estado-aviso:   #e8b04a;   /* Pendiente */
+  --estado-proceso: #7aa2ff;   /* En progreso */
+  --estado-error:   #f0707a;   /* Cancelado / Error */
+
+  /* ---- Tipografía ---- */
+  --fuente-titulos: "Playfair Display", Georgia, "Times New Roman", serif;
+  --fuente-texto:   "Inter", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+
+  /* ---- Espaciado (escala de 4px) ---- */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+
+  /* ---- Formas y sombras ---- */
+  --radio-s: 6px;
+  --radio-m: 12px;
+  --radio-l: 18px;
+  --sombra-suave: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --sombra-dorada: 0 0 0 3px rgba(212, 175, 55, 0.28);
+
+  /* ---- Medidas de layout ---- */
+  --ancho-menu: 248px;
+  --alto-encabezado: 64px;
+  --transicion: 180ms ease;
+}

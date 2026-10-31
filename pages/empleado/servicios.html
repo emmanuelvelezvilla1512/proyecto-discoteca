@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Servicios · IBIZA NIGHT CLUB</title>
+    <!-- Orden de Atomic Design: variables, reset, átomos, moléculas, organismos, plantillas, páginas -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/atoms.css">
+    <link rel="stylesheet" href="../../css/molecules.css">
+    <link rel="stylesheet" href="../../css/organisms.css">
+    <link rel="stylesheet" href="../../css/templates.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+  </head>
+  <body class="plantilla-cuerpo">
+    <a class="atomo-enlace atomo-enlace--salto" href="#contenido">Saltar al contenido</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="atomo-sprite" aria-hidden="true">
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </symbol>
+      <symbol id="i-glass" viewBox="0 0 24 24">
+        <path d="M8 22h8M12 15v7M5 3h14l-7 12z"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M18 20V10M12 20V4M6 20v-6"/>
+      </symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <path d="M3 6h18"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <path d="M9 22V12h6v10"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+    </svg>
+    <div class="plantilla-administrativa">
+      <!-- ORGANISMO: menú lateral (cada rol tiene el suyo) -->
+      <aside class="organismo-menu-lateral" id="menu-lateral" aria-label="Menú lateral">
+        <a class="atomo-logo" href="../../index.html" aria-label="IBIZA NIGHT CLUB, ir al inicio"><span class="atomo-logo__marca"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span><span class="atomo-logo__nombre">IBIZA<span class="atomo-logo__subtitulo">NIGHT CLUB</span></span></a>
+        <nav aria-label="Menú principal">
+          <ul class="organismo-menu-lateral__lista">
+            <li><a class="organismo-menu-lateral__enlace" href="inicio.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-home"/></svg><span>Inicio</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="clientes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Clientes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reservas.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Reservas</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="eventos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><span>Eventos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace es-activo" href="servicios.html" aria-current="page"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg><span>Servicios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="compras.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-cart"/></svg><span>Compras</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="inventario.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-box"/></svg><span>Inventario</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="pedidos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg><span>Pedidos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reportes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><span>Reportes</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="plantilla-administrativa__contenido">
+        <!-- ORGANISMO: encabezado con el usuario -->
+        <header class="organismo-encabezado">
+          <div class="organismo-encabezado__titulo">
+        <button class="atomo-boton atomo-boton--secundario organismo-encabezado__boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-lateral" aria-label="Abrir o cerrar el menú"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+        <strong class="organismo-encabezado__marca">IBIZA NIGHT CLUB</strong>
+      </div>
+          <div class="organismo-encabezado__usuario">
+        <span class="organismo-encabezado__nombre">Camila Restrepo</span>
+        <span class="atomo-insignia atomo-insignia--neutra">Empleado</span>
+        <a class="atomo-boton atomo-boton--secundario atomo-boton--chico" href="../login.html" aria-label="Cerrar sesión"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-logout"/></svg><span class="organismo-encabezado__salir-texto">Cerrar sesión</span></a>
+      </div>
+        </header>
+        <main class="plantilla-administrativa__principal" id="contenido">
+          <h1 class="atomo-solo-lectores">Servicios</h1>
+          <div class="plantilla-listado">
+            <section class="organismo-tarjeta" aria-labelledby="titulo-servicios">
+              <div class="organismo-tarjeta__titulo">
+                <h2 class="atomo-titulo--seccion" id="titulo-servicios">Servicios</h2>
+                <button class="atomo-boton atomo-boton--primario" type="button" data-modal-abrir="modal-servicios-agregar" aria-haspopup="dialog" aria-controls="modal-servicios-agregar" aria-expanded="false">Agregar servicio</button>
+              </div>
+              <div class="organismo-barra-listado">
+                <div class="organismo-barra-listado__buscador">
+                  <label class="atomo-etiqueta" for="buscar-servicios">Buscar</label>
+                  <div class="molecula-buscador">
+                    <svg class="atomo-icono molecula-buscador__icono" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
+                    <input class="molecula-buscador__campo" id="buscar-servicios" type="search" placeholder="Buscar en servicios…" data-filtrar="tabla-servicios">
+                  </div>
+                </div>
+                <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="filtro-servicios-0">Disponibilidad</label><select class="atomo-campo" id="filtro-servicios-0" data-filtrar="tabla-servicios" data-filtrar-columna="3"><option class="atomo-campo__opcion" value="">Todos</option><option class="atomo-campo__opcion" value="Disponible">Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+              </div>
+              <div class="organismo-tabla__contenedor">
+                <table class="organismo-tabla" id="tabla-servicios" aria-labelledby="titulo-servicios">
+                  <thead>
+                    <tr>
+                      <th class="organismo-tabla__cabecera" scope="col">Servicio</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Categoría</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Precio</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Disponibilidad</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-01" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mesa VIP</td>
+                      <td class="organismo-tabla__celda">Espacios</td>
+                      <td class="organismo-tabla__celda">$ 350.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-01" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-01" aria-expanded="false" aria-label="Ver servicio Mesa VIP">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-01" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-01" aria-expanded="false" aria-label="Editar servicio Mesa VIP">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-01" aria-label="Eliminar servicio Mesa VIP">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-02" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Sala privada</td>
+                      <td class="organismo-tabla__celda">Espacios</td>
+                      <td class="organismo-tabla__celda">$ 1.200.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-02" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-02" aria-expanded="false" aria-label="Ver servicio Sala privada">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-02" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-02" aria-expanded="false" aria-label="Editar servicio Sala privada">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-02" aria-label="Eliminar servicio Sala privada">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-03" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">DJ invitado</td>
+                      <td class="organismo-tabla__celda">Entretenimiento</td>
+                      <td class="organismo-tabla__celda">$ 2.500.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-03" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-03" aria-expanded="false" aria-label="Ver servicio DJ invitado">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-03" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-03" aria-expanded="false" aria-label="Editar servicio DJ invitado">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-03" aria-label="Eliminar servicio DJ invitado">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-04" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Coctelería premium</td>
+                      <td class="organismo-tabla__celda">Barra</td>
+                      <td class="organismo-tabla__celda">$ 800.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-04" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-04" aria-expanded="false" aria-label="Ver servicio Coctelería premium">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-04" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-04" aria-expanded="false" aria-label="Editar servicio Coctelería premium">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-04" aria-label="Eliminar servicio Coctelería premium">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-05" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Seguridad y acceso</td>
+                      <td class="organismo-tabla__celda">Operación</td>
+                      <td class="organismo-tabla__celda">$ 600.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-05" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-05" aria-expanded="false" aria-label="Ver servicio Seguridad y acceso">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-05" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-05" aria-expanded="false" aria-label="Editar servicio Seguridad y acceso">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-05" aria-label="Eliminar servicio Seguridad y acceso">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-06" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Decoración temática</td>
+                      <td class="organismo-tabla__celda">Eventos</td>
+                      <td class="organismo-tabla__celda">$ 900.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-06" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-06" aria-expanded="false" aria-label="Ver servicio Decoración temática">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-06" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-06" aria-expanded="false" aria-label="Editar servicio Decoración temática">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-06" aria-label="Eliminar servicio Decoración temática">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-07" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Fotografía y video</td>
+                      <td class="organismo-tabla__celda">Eventos</td>
+                      <td class="organismo-tabla__celda">$ 700.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-07" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-07" aria-expanded="false" aria-label="Ver servicio Fotografía y video">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-07" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-07" aria-expanded="false" aria-label="Editar servicio Fotografía y video">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-07" aria-label="Eliminar servicio Fotografía y video">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-08" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Servicio de botella</td>
+                      <td class="organismo-tabla__celda">Barra</td>
+                      <td class="organismo-tabla__celda">$ 150.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-08" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-08" aria-expanded="false" aria-label="Ver servicio Servicio de botella">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-08" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-08" aria-expanded="false" aria-label="Editar servicio Servicio de botella">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-08" aria-label="Eliminar servicio Servicio de botella">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-09" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Cumpleaños VIP</td>
+                      <td class="organismo-tabla__celda">Eventos</td>
+                      <td class="organismo-tabla__celda">$ 1.500.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-09" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-09" aria-expanded="false" aria-label="Ver servicio Cumpleaños VIP">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-09" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-09" aria-expanded="false" aria-label="Editar servicio Cumpleaños VIP">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-09" aria-label="Eliminar servicio Cumpleaños VIP">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-servicios-srv-10" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Fiesta privada</td>
+                      <td class="organismo-tabla__celda">Eventos</td>
+                      <td class="organismo-tabla__celda">$ 3.500.000</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--error">No disponible</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-ver-srv-10" aria-haspopup="dialog" aria-controls="modal-servicios-ver-srv-10" aria-expanded="false" aria-label="Ver servicio Fiesta privada">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-servicios-editar-srv-10" aria-haspopup="dialog" aria-controls="modal-servicios-editar-srv-10" aria-expanded="false" aria-label="Editar servicio Fiesta privada">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-servicios-srv-10" aria-label="Eliminar servicio Fiesta privada">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" data-sin-resultados hidden>
+                      <td class="organismo-tabla__celda" colspan="5">No se encontraron registros con los criterios indicados.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-agregar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-agregar-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-agregar-titulo">Agregar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-agregar" data-modal-formulario aria-label="Agregar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-servicios-nombre">Nombre</label><input class="atomo-campo" id="a-servicios-nombre" name="nombre" type="text" required minlength="3" maxlength="80"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-servicios-categoria">Categoría</label><input class="atomo-campo" id="a-servicios-categoria" name="categoria" type="text" required maxlength="40"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-servicios-precio">Precio (COP)</label><input class="atomo-campo" id="a-servicios-precio" name="precio" type="number" required min="0" max="100000000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-servicios-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="a-servicios-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible">Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-servicios-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="a-servicios-descripcion" name="descripcion" maxlength="400" required></textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-01" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-01-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-01-titulo">Servicio: Mesa VIP</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Mesa VIP</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Espacios</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 350.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Mesa preferencial con servicio de mesero dedicado.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-01" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-01-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-01-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-01" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-01-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-01-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Mesa VIP"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-01-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-01-categoria" name="categoria" type="text" required maxlength="40" value="Espacios"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-01-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-01-precio" name="precio" type="number" required min="0" max="100000000" value="350000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-01-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-01-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-01-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-01-descripcion" name="descripcion" maxlength="400" required>Mesa preferencial con servicio de mesero dedicado.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-02" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-02-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-02-titulo">Servicio: Sala privada</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Sala privada</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Espacios</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 1.200.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Sala cerrada para grupos de hasta 12 personas.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-02" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-02-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-02-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-02" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-02-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-02-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Sala privada"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-02-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-02-categoria" name="categoria" type="text" required maxlength="40" value="Espacios"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-02-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-02-precio" name="precio" type="number" required min="0" max="100000000" value="1200000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-02-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-02-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-02-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-02-descripcion" name="descripcion" maxlength="400" required>Sala cerrada para grupos de hasta 12 personas.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-03" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-03-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-03-titulo">Servicio: DJ invitado</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">DJ invitado</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Entretenimiento</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 2.500.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Presentación de DJ invitado con equipo propio.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-03" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-03-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-03-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-03" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-03-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-03-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="DJ invitado"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-03-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-03-categoria" name="categoria" type="text" required maxlength="40" value="Entretenimiento"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-03-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-03-precio" name="precio" type="number" required min="0" max="100000000" value="2500000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-03-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-03-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-03-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-03-descripcion" name="descripcion" maxlength="400" required>Presentación de DJ invitado con equipo propio.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-04" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-04-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-04-titulo">Servicio: Coctelería premium</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Coctelería premium</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Barra</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 800.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Barra de cocteles de autor para eventos.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-04" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-04-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-04-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-04" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-04-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-04-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Coctelería premium"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-04-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-04-categoria" name="categoria" type="text" required maxlength="40" value="Barra"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-04-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-04-precio" name="precio" type="number" required min="0" max="100000000" value="800000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-04-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-04-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-04-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-04-descripcion" name="descripcion" maxlength="400" required>Barra de cocteles de autor para eventos.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-05" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-05-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-05-titulo">Servicio: Seguridad y acceso</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Seguridad y acceso</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Operación</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 600.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Control de ingreso y seguridad en sala.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-05" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-05-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-05-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-05" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-05-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-05-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Seguridad y acceso"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-05-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-05-categoria" name="categoria" type="text" required maxlength="40" value="Operación"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-05-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-05-precio" name="precio" type="number" required min="0" max="100000000" value="600000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-05-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-05-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-05-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-05-descripcion" name="descripcion" maxlength="400" required>Control de ingreso y seguridad en sala.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-06" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-06-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-06-titulo">Servicio: Decoración temática</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Decoración temática</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Eventos</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 900.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Ambientación completa según la temática del evento.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-06" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-06-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-06-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-06" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-06-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-06-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Decoración temática"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-06-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-06-categoria" name="categoria" type="text" required maxlength="40" value="Eventos"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-06-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-06-precio" name="precio" type="number" required min="0" max="100000000" value="900000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-06-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-06-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-06-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-06-descripcion" name="descripcion" maxlength="400" required>Ambientación completa según la temática del evento.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-07" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-07-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-07-titulo">Servicio: Fotografía y video</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Fotografía y video</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Eventos</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 700.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Cobertura fotográfica y video resumen de la noche.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-07" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-07-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-07-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-07" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-07-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-07-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Fotografía y video"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-07-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-07-categoria" name="categoria" type="text" required maxlength="40" value="Eventos"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-07-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-07-precio" name="precio" type="number" required min="0" max="100000000" value="700000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-07-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-07-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-07-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-07-descripcion" name="descripcion" maxlength="400" required>Cobertura fotográfica y video resumen de la noche.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-08" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-08-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-08-titulo">Servicio: Servicio de botella</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Servicio de botella</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Barra</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 150.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Botella con mezcladores y hielo en la mesa.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-08" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-08-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-08-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-08" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-08-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-08-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Servicio de botella"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-08-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-08-categoria" name="categoria" type="text" required maxlength="40" value="Barra"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-08-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-08-precio" name="precio" type="number" required min="0" max="100000000" value="150000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-08-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-08-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-08-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-08-descripcion" name="descripcion" maxlength="400" required>Botella con mezcladores y hielo en la mesa.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-09" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-09-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-09-titulo">Servicio: Cumpleaños VIP</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Cumpleaños VIP</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Eventos</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 1.500.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Paquete de celebración con mesa, torta y show de luces.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-09" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-09-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-09-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-09" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-09-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-09-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Cumpleaños VIP"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-09-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-09-categoria" name="categoria" type="text" required maxlength="40" value="Eventos"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-09-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-09-precio" name="precio" type="number" required min="0" max="100000000" value="1500000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-09-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-09-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible" selected>Disponible</option><option class="atomo-campo__opcion" value="No disponible">No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-09-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-09-descripcion" name="descripcion" maxlength="400" required>Paquete de celebración con mesa, torta y show de luces.</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-ver-srv-10" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-ver-srv-10-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-ver-srv-10-titulo">Servicio: Fiesta privada</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Fiesta privada</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor">Eventos</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Precio</dt>
+            <dd class="molecula-detalle__valor">$ 3.500.000</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Disponibilidad</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--error">No disponible</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Alquiler del club completo (por temporada).</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-servicios-editar-srv-10" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-servicios-editar-srv-10-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-servicios-editar-srv-10-titulo">Editar servicio</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-servicios-editar-srv-10" data-modal-formulario aria-label="Editar servicio">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-10-nombre">Nombre</label><input class="atomo-campo" id="e-servicios-srv-10-nombre" name="nombre" type="text" required minlength="3" maxlength="80" value="Fiesta privada"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-10-categoria">Categoría</label><input class="atomo-campo" id="e-servicios-srv-10-categoria" name="categoria" type="text" required maxlength="40" value="Eventos"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-10-precio">Precio (COP)</label><input class="atomo-campo" id="e-servicios-srv-10-precio" name="precio" type="number" required min="0" max="100000000" value="3500000"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-10-disponibilidad">Disponibilidad</label><select class="atomo-campo" id="e-servicios-srv-10-disponibilidad" name="disponibilidad" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Disponible">Disponible</option><option class="atomo-campo__opcion" value="No disponible" selected>No disponible</option></select></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-servicios-srv-10-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-servicios-srv-10-descripcion" name="descripcion" maxlength="400" required>Alquiler del club completo (por temporada).</textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eliminar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eliminar-titulo">
+      <div class="organismo-modal__caja organismo-modal__caja--pequena" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eliminar-titulo">Eliminar registro</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <p class="atomo-texto--secundario">¿Seguro que quieres eliminar este registro? Esta acción no se puede deshacer.</p>
+        <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-modal__pie">
+      <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+      <button class="atomo-boton atomo-boton--peligro" type="button" data-eliminar-confirmar>Eliminar</button>
+    </div>
+      </div>
+    </div>
+    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/modales.js" defer></script>
+    <script src="../../js/buscador.js" defer></script>
+  </body>
+</html>

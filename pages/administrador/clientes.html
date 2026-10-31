@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clientes · IBIZA NIGHT CLUB</title>
+    <!-- Orden de Atomic Design: variables, reset, átomos, moléculas, organismos, plantillas, páginas -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/atoms.css">
+    <link rel="stylesheet" href="../../css/molecules.css">
+    <link rel="stylesheet" href="../../css/organisms.css">
+    <link rel="stylesheet" href="../../css/templates.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+  </head>
+  <body class="plantilla-cuerpo">
+    <a class="atomo-enlace atomo-enlace--salto" href="#contenido">Saltar al contenido</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="atomo-sprite" aria-hidden="true">
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </symbol>
+      <symbol id="i-glass" viewBox="0 0 24 24">
+        <path d="M8 22h8M12 15v7M5 3h14l-7 12z"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M18 20V10M12 20V4M6 20v-6"/>
+      </symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <path d="M3 6h18"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <path d="M9 22V12h6v10"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+    </svg>
+    <div class="plantilla-administrativa">
+      <!-- ORGANISMO: menú lateral (cada rol tiene el suyo) -->
+      <aside class="organismo-menu-lateral" id="menu-lateral" aria-label="Menú lateral">
+        <a class="atomo-logo" href="../../index.html" aria-label="IBIZA NIGHT CLUB, ir al inicio"><span class="atomo-logo__marca"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span><span class="atomo-logo__nombre">IBIZA<span class="atomo-logo__subtitulo">NIGHT CLUB</span></span></a>
+        <nav aria-label="Menú principal">
+          <ul class="organismo-menu-lateral__lista">
+            <li><a class="organismo-menu-lateral__enlace" href="dashboard.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg><span>Dashboard</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="usuarios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><span>Usuarios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace es-activo" href="clientes.html" aria-current="page"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Clientes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="empleados.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg><span>Empleados</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reservas.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Reservas</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="eventos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><span>Eventos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="servicios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg><span>Servicios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="compras.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-cart"/></svg><span>Compras</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="inventario.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-box"/></svg><span>Inventario</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="pedidos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg><span>Pedidos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reportes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><span>Reportes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="configuracion.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-gear"/></svg><span>Configuración</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="plantilla-administrativa__contenido">
+        <!-- ORGANISMO: encabezado con el usuario -->
+        <header class="organismo-encabezado">
+          <div class="organismo-encabezado__titulo">
+        <button class="atomo-boton atomo-boton--secundario organismo-encabezado__boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-lateral" aria-label="Abrir o cerrar el menú"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+        <strong class="organismo-encabezado__marca">IBIZA NIGHT CLUB</strong>
+      </div>
+          <div class="organismo-encabezado__usuario">
+        <span class="organismo-encabezado__nombre">Laura Martínez</span>
+        <span class="atomo-insignia atomo-insignia--neutra">Administrador</span>
+        <a class="atomo-boton atomo-boton--secundario atomo-boton--chico" href="../login.html" aria-label="Cerrar sesión"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-logout"/></svg><span class="organismo-encabezado__salir-texto">Cerrar sesión</span></a>
+      </div>
+        </header>
+        <main class="plantilla-administrativa__principal" id="contenido">
+          <h1 class="atomo-solo-lectores">Clientes</h1>
+          <div class="plantilla-listado">
+            <section class="organismo-tarjeta" aria-labelledby="titulo-clientes">
+              <div class="organismo-tarjeta__titulo">
+                <h2 class="atomo-titulo--seccion" id="titulo-clientes">Clientes</h2>
+                <button class="atomo-boton atomo-boton--primario" type="button" data-modal-abrir="modal-clientes-agregar" aria-haspopup="dialog" aria-controls="modal-clientes-agregar" aria-expanded="false">Agregar cliente</button>
+              </div>
+              <div class="organismo-barra-listado">
+                <div class="organismo-barra-listado__buscador">
+                  <label class="atomo-etiqueta" for="buscar-clientes">Buscar</label>
+                  <div class="molecula-buscador">
+                    <svg class="atomo-icono molecula-buscador__icono" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
+                    <input class="molecula-buscador__campo" id="buscar-clientes" type="search" placeholder="Buscar en clientes…" data-filtrar="tabla-clientes">
+                  </div>
+                </div>
+                <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="filtro-clientes-0">Categoría</label><select class="atomo-campo" id="filtro-clientes-0" data-filtrar="tabla-clientes" data-filtrar-columna="4"><option class="atomo-campo__opcion" value="">Todos</option><option class="atomo-campo__opcion" value="General">General</option><option class="atomo-campo__opcion" value="VIP">VIP</option></select></div>
+                <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="filtro-clientes-1">Estado</label><select class="atomo-campo" id="filtro-clientes-1" data-filtrar="tabla-clientes" data-filtrar-columna="5"><option class="atomo-campo__opcion" value="">Todos</option><option class="atomo-campo__opcion" value="Activo">Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+              </div>
+              <div class="organismo-tabla__contenedor">
+                <table class="organismo-tabla" id="tabla-clientes" aria-labelledby="titulo-clientes">
+                  <thead>
+                    <tr>
+                      <th class="organismo-tabla__cabecera" scope="col">Documento</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Nombre</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Correo</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Teléfono</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Categoría</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Estado</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-01" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000001</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mariana Zapata</td>
+                      <td class="organismo-tabla__celda">mariana.zapata@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000001</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-01" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-01" aria-expanded="false" aria-label="Ver cliente Mariana Zapata">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-01" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-01" aria-expanded="false" aria-label="Editar cliente Mariana Zapata">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-01" aria-label="Eliminar cliente Mariana Zapata">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-02" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000002</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Juan Pablo Duque</td>
+                      <td class="organismo-tabla__celda">juanpablo.duque@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000002</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--neutra">General</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-02" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-02" aria-expanded="false" aria-label="Ver cliente Juan Pablo Duque">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-02" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-02" aria-expanded="false" aria-label="Editar cliente Juan Pablo Duque">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-02" aria-label="Eliminar cliente Juan Pablo Duque">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-03" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000003</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Sofía Henao</td>
+                      <td class="organismo-tabla__celda">sofia.henao@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000003</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-03" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-03" aria-expanded="false" aria-label="Ver cliente Sofía Henao">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-03" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-03" aria-expanded="false" aria-label="Editar cliente Sofía Henao">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-03" aria-label="Eliminar cliente Sofía Henao">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-04" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000004</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Santiago Ríos</td>
+                      <td class="organismo-tabla__celda">santiago.rios@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000004</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--neutra">General</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-04" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-04" aria-expanded="false" aria-label="Ver cliente Santiago Ríos">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-04" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-04" aria-expanded="false" aria-label="Editar cliente Santiago Ríos">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-04" aria-label="Eliminar cliente Santiago Ríos">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-05" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000005</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Manuela Echeverri</td>
+                      <td class="organismo-tabla__celda">manuela.echeverri@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000005</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-05" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-05" aria-expanded="false" aria-label="Ver cliente Manuela Echeverri">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-05" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-05" aria-expanded="false" aria-label="Editar cliente Manuela Echeverri">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-05" aria-label="Eliminar cliente Manuela Echeverri">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-06" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000006</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Tomás Giraldo</td>
+                      <td class="organismo-tabla__celda">tomas.giraldo@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000006</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--neutra">General</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-06" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-06" aria-expanded="false" aria-label="Ver cliente Tomás Giraldo">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-06" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-06" aria-expanded="false" aria-label="Editar cliente Tomás Giraldo">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-06" aria-label="Eliminar cliente Tomás Giraldo">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-07" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CE 3050000007</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Luciana Mesa</td>
+                      <td class="organismo-tabla__celda">luciana.mesa@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000007</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-07" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-07" aria-expanded="false" aria-label="Ver cliente Luciana Mesa">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-07" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-07" aria-expanded="false" aria-label="Editar cliente Luciana Mesa">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-07" aria-label="Eliminar cliente Luciana Mesa">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-08" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">PPT 4060000008</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Nicolás Posada</td>
+                      <td class="organismo-tabla__celda">nicolas.posada@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000008</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--neutra">General</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-08" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-08" aria-expanded="false" aria-label="Ver cliente Nicolás Posada">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-08" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-08" aria-expanded="false" aria-label="Editar cliente Nicolás Posada">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-08" aria-label="Eliminar cliente Nicolás Posada">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-09" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000009</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Gabriela Salazar</td>
+                      <td class="organismo-tabla__celda">gabriela.salazar@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000009</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--neutra">General</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--error">Inactivo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-09" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-09" aria-expanded="false" aria-label="Ver cliente Gabriela Salazar">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-09" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-09" aria-expanded="false" aria-label="Editar cliente Gabriela Salazar">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-09" aria-label="Eliminar cliente Gabriela Salazar">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-clientes-cli-10" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">CC 1030000010</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Esteban Cadavid</td>
+                      <td class="organismo-tabla__celda">esteban.cadavid@correo.com</td>
+                      <td class="organismo-tabla__celda">3101000010</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Activo</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-ver-cli-10" aria-haspopup="dialog" aria-controls="modal-clientes-ver-cli-10" aria-expanded="false" aria-label="Ver cliente Esteban Cadavid">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-clientes-editar-cli-10" aria-haspopup="dialog" aria-controls="modal-clientes-editar-cli-10" aria-expanded="false" aria-label="Editar cliente Esteban Cadavid">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-clientes-cli-10" aria-label="Eliminar cliente Esteban Cadavid">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" data-sin-resultados hidden>
+                      <td class="organismo-tabla__celda" colspan="7">No se encontraron registros con los criterios indicados.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-agregar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-agregar-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-agregar-titulo">Agregar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-agregar" data-modal-formulario aria-label="Agregar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="a-clientes-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC">Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-documento">Número de documento</label><input class="atomo-campo" id="a-clientes-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-nombres">Nombres</label><input class="atomo-campo" id="a-clientes-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-apellidos">Apellidos</label><input class="atomo-campo" id="a-clientes-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-correo">Correo electrónico</label><input class="atomo-campo" id="a-clientes-correo" name="correo" type="email" required maxlength="100">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-telefono">Teléfono</label><input class="atomo-campo" id="a-clientes-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-categoria">Categoría</label><select class="atomo-campo" id="a-clientes-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General">General</option><option class="atomo-campo__opcion" value="VIP">VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-estado">Estado</label><select class="atomo-campo" id="a-clientes-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo">Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-clientes-password">Contraseña</label><input class="atomo-campo" id="a-clientes-password" name="password" type="password" required minlength="8" maxlength="64">
+              <p class="molecula-campo-completo__ayuda">Mínimo 8 caracteres.</p>
+            </div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-01" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-01-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-01-titulo">Cliente: Mariana Zapata</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000001</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Mariana Zapata</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">mariana.zapata@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000001</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-01" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-01-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-01-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-01" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-01-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-01-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000001">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-01-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Mariana">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-01-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Zapata">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-01-correo" name="correo" type="email" required maxlength="100" value="mariana.zapata@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-01-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000001">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-01-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General">General</option><option class="atomo-campo__opcion" value="VIP" selected>VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-01-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-01-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-02" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-02-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-02-titulo">Cliente: Juan Pablo Duque</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000002</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Juan Pablo Duque</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">juanpablo.duque@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000002</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--neutra">General</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-02" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-02-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-02-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-02" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-02-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-02-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000002">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-02-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Juan Pablo">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-02-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Duque">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-02-correo" name="correo" type="email" required maxlength="100" value="juanpablo.duque@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-02-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000002">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-02-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General" selected>General</option><option class="atomo-campo__opcion" value="VIP">VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-02-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-02-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-03" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-03-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-03-titulo">Cliente: Sofía Henao</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000003</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Sofía Henao</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">sofia.henao@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000003</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-03" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-03-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-03-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-03" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-03-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-03-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000003">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-03-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Sofía">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-03-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Henao">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-03-correo" name="correo" type="email" required maxlength="100" value="sofia.henao@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-03-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000003">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-03-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General">General</option><option class="atomo-campo__opcion" value="VIP" selected>VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-03-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-03-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-04" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-04-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-04-titulo">Cliente: Santiago Ríos</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000004</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Santiago Ríos</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">santiago.rios@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000004</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--neutra">General</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-04" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-04-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-04-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-04" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-04-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-04-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000004">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-04-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Santiago">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-04-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Ríos">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-04-correo" name="correo" type="email" required maxlength="100" value="santiago.rios@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-04-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000004">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-04-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General" selected>General</option><option class="atomo-campo__opcion" value="VIP">VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-04-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-04-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-05" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-05-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-05-titulo">Cliente: Manuela Echeverri</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000005</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Manuela Echeverri</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">manuela.echeverri@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000005</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-05" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-05-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-05-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-05" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-05-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-05-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000005">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-05-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Manuela">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-05-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Echeverri">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-05-correo" name="correo" type="email" required maxlength="100" value="manuela.echeverri@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-05-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000005">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-05-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General">General</option><option class="atomo-campo__opcion" value="VIP" selected>VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-05-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-05-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-06" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-06-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-06-titulo">Cliente: Tomás Giraldo</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000006</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Tomás Giraldo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">tomas.giraldo@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000006</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--neutra">General</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-06" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-06-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-06-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-06" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-06-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-06-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000006">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-06-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Tomás">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-06-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Giraldo">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-06-correo" name="correo" type="email" required maxlength="100" value="tomas.giraldo@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-06-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000006">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-06-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General" selected>General</option><option class="atomo-campo__opcion" value="VIP">VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-06-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-06-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-07" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-07-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-07-titulo">Cliente: Luciana Mesa</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CE 3050000007</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Luciana Mesa</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">luciana.mesa@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000007</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-07" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-07-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-07-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-07" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-07-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC">Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE" selected>Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-07-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="3050000007">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-07-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Luciana">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-07-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Mesa">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-07-correo" name="correo" type="email" required maxlength="100" value="luciana.mesa@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-07-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000007">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-07-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General">General</option><option class="atomo-campo__opcion" value="VIP" selected>VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-07-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-07-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-08" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-08-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-08-titulo">Cliente: Nicolás Posada</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">PPT 4060000008</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Nicolás Posada</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">nicolas.posada@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000008</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--neutra">General</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-08" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-08-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-08-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-08" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-08-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC">Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT" selected>Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-08-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="4060000008">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-08-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Nicolás">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-08-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Posada">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-08-correo" name="correo" type="email" required maxlength="100" value="nicolas.posada@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-08-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000008">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-08-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General" selected>General</option><option class="atomo-campo__opcion" value="VIP">VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-08-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-08-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-09" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-09-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-09-titulo">Cliente: Gabriela Salazar</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000009</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Gabriela Salazar</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">gabriela.salazar@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000009</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--neutra">General</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--error">Inactivo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-09" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-09-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-09-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-09" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-09-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-09-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000009">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-09-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Gabriela">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-09-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Salazar">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-09-correo" name="correo" type="email" required maxlength="100" value="gabriela.salazar@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-09-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000009">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-09-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General" selected>General</option><option class="atomo-campo__opcion" value="VIP">VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-09-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-09-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo">Activo</option><option class="atomo-campo__opcion" value="Inactivo" selected>Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-ver-cli-10" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-ver-cli-10-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-ver-cli-10-titulo">Cliente: Esteban Cadavid</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Documento</dt>
+            <dd class="molecula-detalle__valor">CC 1030000010</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre completo</dt>
+            <dd class="molecula-detalle__valor">Esteban Cadavid</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Correo</dt>
+            <dd class="molecula-detalle__valor">esteban.cadavid@correo.com</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Teléfono</dt>
+            <dd class="molecula-detalle__valor">3101000010</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Categoría</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">VIP</span></dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Activo</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-clientes-editar-cli-10" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-clientes-editar-cli-10-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-clientes-editar-cli-10-titulo">Editar cliente</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-clientes-editar-cli-10" data-modal-formulario aria-label="Editar cliente">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-tipoDocumento">Tipo de documento</label><select class="atomo-campo" id="e-clientes-cli-10-tipoDocumento" name="tipoDocumento" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CC" selected>Cédula de ciudadanía (CC)</option><option class="atomo-campo__opcion" value="CE">Cédula de extranjería (CE)</option><option class="atomo-campo__opcion" value="PAS">Pasaporte</option><option class="atomo-campo__opcion" value="PPT">Permiso por Protección Temporal (PPT)</option><option class="atomo-campo__opcion" value="DIE">Documento de identificación extranjero</option></select></div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-documento">Número de documento</label><input class="atomo-campo" id="e-clientes-cli-10-documento" name="documento" type="text" required pattern="[0-9]+" title="Solo números." minlength="4" maxlength="20" inputmode="numeric" value="1030000010">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-nombres">Nombres</label><input class="atomo-campo" id="e-clientes-cli-10-nombres" name="nombres" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Esteban">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-apellidos">Apellidos</label><input class="atomo-campo" id="e-clientes-cli-10-apellidos" name="apellidos" type="text" required pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras y espacios." maxlength="60" value="Cadavid">
+              <p class="molecula-campo-completo__error">Solo letras y espacios.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-correo">Correo electrónico</label><input class="atomo-campo" id="e-clientes-cli-10-correo" name="correo" type="email" required maxlength="100" value="esteban.cadavid@correo.com">
+              <p class="molecula-campo-completo__error">Escribe un correo válido, con @.</p>
+            </div>
+            <div class="molecula-campo-completo">
+              <label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-telefono">Teléfono</label><input class="atomo-campo" id="e-clientes-cli-10-telefono" name="telefono" type="tel" required pattern="[0-9]+" title="Solo números." minlength="7" maxlength="15" inputmode="numeric" value="3101000010">
+              <p class="molecula-campo-completo__error">Solo números.</p>
+            </div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-categoria">Categoría</label><select class="atomo-campo" id="e-clientes-cli-10-categoria" name="categoria" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="General">General</option><option class="atomo-campo__opcion" value="VIP" selected>VIP</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-clientes-cli-10-estado">Estado</label><select class="atomo-campo" id="e-clientes-cli-10-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Activo" selected>Activo</option><option class="atomo-campo__opcion" value="Inactivo">Inactivo</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eliminar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eliminar-titulo">
+      <div class="organismo-modal__caja organismo-modal__caja--pequena" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eliminar-titulo">Eliminar registro</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <p class="atomo-texto--secundario">¿Seguro que quieres eliminar este registro? Esta acción no se puede deshacer.</p>
+        <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-modal__pie">
+      <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+      <button class="atomo-boton atomo-boton--peligro" type="button" data-eliminar-confirmar>Eliminar</button>
+    </div>
+      </div>
+    </div>
+    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/modales.js" defer></script>
+    <script src="../../js/buscador.js" defer></script>
+  </body>
+</html>

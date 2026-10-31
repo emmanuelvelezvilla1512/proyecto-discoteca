@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eventos · IBIZA NIGHT CLUB</title>
+    <!-- Orden de Atomic Design: variables, reset, átomos, moléculas, organismos, plantillas, páginas -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/atoms.css">
+    <link rel="stylesheet" href="../../css/molecules.css">
+    <link rel="stylesheet" href="../../css/organisms.css">
+    <link rel="stylesheet" href="../../css/templates.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+  </head>
+  <body class="plantilla-cuerpo">
+    <a class="atomo-enlace atomo-enlace--salto" href="#contenido">Saltar al contenido</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="atomo-sprite" aria-hidden="true">
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </symbol>
+      <symbol id="i-glass" viewBox="0 0 24 24">
+        <path d="M8 22h8M12 15v7M5 3h14l-7 12z"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M18 20V10M12 20V4M6 20v-6"/>
+      </symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <path d="M3 6h18"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <path d="M9 22V12h6v10"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+    </svg>
+    <div class="plantilla-administrativa">
+      <!-- ORGANISMO: menú lateral (cada rol tiene el suyo) -->
+      <aside class="organismo-menu-lateral" id="menu-lateral" aria-label="Menú lateral">
+        <a class="atomo-logo" href="../../index.html" aria-label="IBIZA NIGHT CLUB, ir al inicio"><span class="atomo-logo__marca"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span><span class="atomo-logo__nombre">IBIZA<span class="atomo-logo__subtitulo">NIGHT CLUB</span></span></a>
+        <nav aria-label="Menú principal">
+          <ul class="organismo-menu-lateral__lista">
+            <li><a class="organismo-menu-lateral__enlace" href="inicio.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-home"/></svg><span>Inicio</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="clientes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Clientes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reservas.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Reservas</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace es-activo" href="eventos.html" aria-current="page"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><span>Eventos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="servicios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg><span>Servicios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="compras.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-cart"/></svg><span>Compras</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="inventario.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-box"/></svg><span>Inventario</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="pedidos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg><span>Pedidos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reportes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><span>Reportes</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="plantilla-administrativa__contenido">
+        <!-- ORGANISMO: encabezado con el usuario -->
+        <header class="organismo-encabezado">
+          <div class="organismo-encabezado__titulo">
+        <button class="atomo-boton atomo-boton--secundario organismo-encabezado__boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-lateral" aria-label="Abrir o cerrar el menú"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+        <strong class="organismo-encabezado__marca">IBIZA NIGHT CLUB</strong>
+      </div>
+          <div class="organismo-encabezado__usuario">
+        <span class="organismo-encabezado__nombre">Camila Restrepo</span>
+        <span class="atomo-insignia atomo-insignia--neutra">Empleado</span>
+        <a class="atomo-boton atomo-boton--secundario atomo-boton--chico" href="../login.html" aria-label="Cerrar sesión"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-logout"/></svg><span class="organismo-encabezado__salir-texto">Cerrar sesión</span></a>
+      </div>
+        </header>
+        <main class="plantilla-administrativa__principal" id="contenido">
+          <h1 class="atomo-solo-lectores">Eventos</h1>
+          <div class="plantilla-listado">
+            <section class="organismo-tarjeta" aria-labelledby="titulo-eventos">
+              <div class="organismo-tarjeta__titulo">
+                <h2 class="atomo-titulo--seccion" id="titulo-eventos">Agenda de eventos</h2>
+                <button class="atomo-boton atomo-boton--primario" type="button" data-modal-abrir="modal-eventos-agregar" aria-haspopup="dialog" aria-controls="modal-eventos-agregar" aria-expanded="false">Agregar evento</button>
+              </div>
+              <div class="organismo-barra-listado">
+                <div class="organismo-barra-listado__buscador">
+                  <label class="atomo-etiqueta" for="buscar-eventos">Buscar</label>
+                  <div class="molecula-buscador">
+                    <svg class="atomo-icono molecula-buscador__icono" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
+                    <input class="molecula-buscador__campo" id="buscar-eventos" type="search" placeholder="Buscar en agenda de eventos…" data-filtrar="tabla-eventos">
+                  </div>
+                </div>
+                <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="filtro-eventos-0">Estado</label><select class="atomo-campo" id="filtro-eventos-0" data-filtrar="tabla-eventos" data-filtrar-columna="5"><option class="atomo-campo__opcion" value="">Todos</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+              </div>
+              <div class="organismo-tabla__contenedor">
+                <table class="organismo-tabla organismo-tabla--ancha" id="tabla-eventos" aria-labelledby="titulo-eventos">
+                  <thead>
+                    <tr>
+                      <th class="organismo-tabla__cabecera" scope="col">Nombre</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Fecha y hora</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Ubicación</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Empleados</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Servicio</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Estado</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-005" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Ladies Night</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">22 sep 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Salón principal</td>
+                      <td class="organismo-tabla__celda">Valentina Gómez, Camila Restrepo</td>
+                      <td class="organismo-tabla__celda">Mesa VIP</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Completado</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-005" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-005" aria-expanded="false" aria-label="Ver evento Ladies Night">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-005" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-005" aria-expanded="false" aria-label="Editar evento Ladies Night">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-005" aria-label="Eliminar evento Ladies Night">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-012" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Pre-Party Universitaria</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">06 oct 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Salón principal</td>
+                      <td class="organismo-tabla__celda">Andrés Londoño, Kevin Montoya</td>
+                      <td class="organismo-tabla__celda">Seguridad y acceso</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Completado</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-012" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-012" aria-expanded="false" aria-label="Ver evento Pre-Party Universitaria">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-012" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-012" aria-expanded="false" aria-label="Editar evento Pre-Party Universitaria">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-012" aria-label="Eliminar evento Pre-Party Universitaria">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-006" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Lanzamiento de Marca de Licor</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">13 oct 2026, 8:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Terraza</td>
+                      <td class="organismo-tabla__celda">Valentina Gómez</td>
+                      <td class="organismo-tabla__celda">Coctelería premium</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--error">Cancelado</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-006" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-006" aria-expanded="false" aria-label="Ver evento Lanzamiento de Marca de Licor">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-006" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-006" aria-expanded="false" aria-label="Editar evento Lanzamiento de Marca de Licor">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-006" aria-label="Eliminar evento Lanzamiento de Marca de Licor">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-014" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Brunch Dominical</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">20 oct 2026, 11:00 a. m.</td>
+                      <td class="organismo-tabla__celda">Terraza</td>
+                      <td class="organismo-tabla__celda">Paula Arbeláez, Camila Restrepo</td>
+                      <td class="organismo-tabla__celda">Fotografía y video</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Completado</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-014" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-014" aria-expanded="false" aria-label="Ver evento Brunch Dominical">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-014" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-014" aria-expanded="false" aria-label="Editar evento Brunch Dominical">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-014" aria-label="Eliminar evento Brunch Dominical">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-003" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Fiesta Privada Aniversario Empresarial</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">26 oct 2026, 8:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Sala VIP 2</td>
+                      <td class="organismo-tabla__celda">Sebastián Arango, Camila Restrepo</td>
+                      <td class="organismo-tabla__celda">Sala privada</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--proceso">En progreso</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-003" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-003" aria-expanded="false" aria-label="Ver evento Fiesta Privada Aniversario Empresarial">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-003" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-003" aria-expanded="false" aria-label="Editar evento Fiesta Privada Aniversario Empresarial">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-003" aria-label="Eliminar evento Fiesta Privada Aniversario Empresarial">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-007" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Noche Latina</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">29 oct 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Salón principal</td>
+                      <td class="organismo-tabla__celda">Valentina Gómez, Daniela Cardona</td>
+                      <td class="organismo-tabla__celda">Servicio de botella</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-007" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-007" aria-expanded="false" aria-label="Ver evento Noche Latina">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-007" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-007" aria-expanded="false" aria-label="Editar evento Noche Latina">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-007" aria-label="Eliminar evento Noche Latina">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-008" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Sunset Terraza Sessions</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">31 oct 2026, 5:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Terraza</td>
+                      <td class="organismo-tabla__celda">Mateo Ruiz, Paula Arbeláez</td>
+                      <td class="organismo-tabla__celda">DJ invitado</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-008" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-008" aria-expanded="false" aria-label="Ver evento Sunset Terraza Sessions">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-008" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-008" aria-expanded="false" aria-label="Editar evento Sunset Terraza Sessions">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-008" aria-label="Eliminar evento Sunset Terraza Sessions">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-001" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Noche Electrónica: Opening Season</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">02 nov 2026, 10:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Salón principal</td>
+                      <td class="organismo-tabla__celda">Camila Restrepo, Andrés Londoño</td>
+                      <td class="organismo-tabla__celda">DJ invitado</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-001" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-001" aria-expanded="false" aria-label="Ver evento Noche Electrónica: Opening Season">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-001" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-001" aria-expanded="false" aria-label="Editar evento Noche Electrónica: Opening Season">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-001" aria-label="Eliminar evento Noche Electrónica: Opening Season">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-004" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Halloween Night</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">03 nov 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Todo el club</td>
+                      <td class="organismo-tabla__celda">Andrés Londoño, Sebastián Arango, Kevin Montoya</td>
+                      <td class="organismo-tabla__celda">Seguridad y acceso</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-004" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-004" aria-expanded="false" aria-label="Ver evento Halloween Night">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-004" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-004" aria-expanded="false" aria-label="Editar evento Halloween Night">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-004" aria-label="Eliminar evento Halloween Night">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-009" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Cumpleaños VIP Isabella</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">05 nov 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Sala VIP 1</td>
+                      <td class="organismo-tabla__celda">Daniela Cardona, Camila Restrepo</td>
+                      <td class="organismo-tabla__celda">Cumpleaños VIP</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-009" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-009" aria-expanded="false" aria-label="Ver evento Cumpleaños VIP Isabella">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-009" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-009" aria-expanded="false" aria-label="Editar evento Cumpleaños VIP Isabella">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-009" aria-label="Eliminar evento Cumpleaños VIP Isabella">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-002" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Noche de Reggaetón Clásico</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">09 nov 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Terraza</td>
+                      <td class="organismo-tabla__celda">Valentina Gómez, Paula Arbeláez</td>
+                      <td class="organismo-tabla__celda">Coctelería premium</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-002" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-002" aria-expanded="false" aria-label="Ver evento Noche de Reggaetón Clásico">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-002" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-002" aria-expanded="false" aria-label="Editar evento Noche de Reggaetón Clásico">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-002" aria-label="Eliminar evento Noche de Reggaetón Clásico">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-013" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Noche de Techno Underground</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">12 nov 2026, 11:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Salón principal</td>
+                      <td class="organismo-tabla__celda">Mateo Ruiz, Sebastián Arango</td>
+                      <td class="organismo-tabla__celda">DJ invitado</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-013" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-013" aria-expanded="false" aria-label="Ver evento Noche de Techno Underground">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-013" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-013" aria-expanded="false" aria-label="Editar evento Noche de Techno Underground">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-013" aria-label="Eliminar evento Noche de Techno Underground">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-010" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Noche de Salsa en Vivo</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">16 nov 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Salón principal</td>
+                      <td class="organismo-tabla__celda">Mateo Ruiz, Daniela Cardona</td>
+                      <td class="organismo-tabla__celda">—</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-010" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-010" aria-expanded="false" aria-label="Ver evento Noche de Salsa en Vivo">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-010" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-010" aria-expanded="false" aria-label="Editar evento Noche de Salsa en Vivo">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-010" aria-label="Eliminar evento Noche de Salsa en Vivo">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-eventos-ev-011" data-fila>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Fiesta de Fin de Año</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">30 dic 2026, 9:00 p. m.</td>
+                      <td class="organismo-tabla__celda">Todo el club</td>
+                      <td class="organismo-tabla__celda">Camila Restrepo, Andrés Londoño, Valentina Gómez, Sebastián Arango</td>
+                      <td class="organismo-tabla__celda">Decoración temática</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-ver-ev-011" aria-haspopup="dialog" aria-controls="modal-eventos-ver-ev-011" aria-expanded="false" aria-label="Ver evento Fiesta de Fin de Año">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-eventos-editar-ev-011" aria-haspopup="dialog" aria-controls="modal-eventos-editar-ev-011" aria-expanded="false" aria-label="Editar evento Fiesta de Fin de Año">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-eventos-ev-011" aria-label="Eliminar evento Fiesta de Fin de Año">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" data-sin-resultados hidden>
+                      <td class="organismo-tabla__celda" colspan="7">No se encontraron registros con los criterios indicados.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-agregar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-agregar-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-agregar-titulo">Agregar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-agregar" data-modal-formulario aria-label="Agregar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-eventos-nombre">Nombre del evento</label><input class="atomo-campo" id="a-eventos-nombre" name="nombre" type="text" required minlength="3" maxlength="100"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-eventos-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="a-eventos-inicio" name="inicio" type="datetime-local" required></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-eventos-fin">Fecha y hora de fin</label><input class="atomo-campo" id="a-eventos-fin" name="fin" type="datetime-local" required></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-eventos-ubicacion">Ubicación</label><input class="atomo-campo" id="a-eventos-ubicacion" name="ubicacion" type="text" required maxlength="80"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="a-eventos-servicio">Servicio asociado</label><select class="atomo-campo" id="a-eventos-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-eventos-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="a-eventos-descripcion" name="descripcion" maxlength="400" required></textarea></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-005" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-005-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-005-titulo">Evento: Ladies Night</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Ladies Night</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">22 sep 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">23 sep 2026, 3:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Salón principal</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Mesa VIP</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Valentina Gómez, Camila Restrepo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Noche temática con cortesías en mesas VIP.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Completado</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-005" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-005-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-005-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-005" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-005-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-005-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Ladies Night"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-005-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-005-inicio" name="inicio" type="datetime-local" required value="2026-09-22T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-005-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-005-fin" name="fin" type="datetime-local" required value="2026-09-23T03:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-005-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-005-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Salón principal"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-005-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-005-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP" selected>Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo" checked><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez" checked><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-005-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-005-descripcion" name="descripcion" maxlength="400" required>Noche temática con cortesías en mesas VIP.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-005-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-005-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado" selected>Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-012" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-012-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-012-titulo">Evento: Pre-Party Universitaria</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Pre-Party Universitaria</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">06 oct 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">07 oct 2026, 3:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Salón principal</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Seguridad y acceso</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Andrés Londoño, Kevin Montoya</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Noche de descuentos para estudiantes con carné vigente.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Completado</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-012" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-012-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-012-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-012" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-012-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-012-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Pre-Party Universitaria"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-012-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-012-inicio" name="inicio" type="datetime-local" required value="2026-10-06T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-012-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-012-fin" name="fin" type="datetime-local" required value="2026-10-07T03:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-012-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-012-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Salón principal"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-012-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-012-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso" selected>Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño" checked><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya" checked><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-012-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-012-descripcion" name="descripcion" maxlength="400" required>Noche de descuentos para estudiantes con carné vigente.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-012-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-012-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado" selected>Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-006" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-006-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-006-titulo">Evento: Lanzamiento de Marca de Licor</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Lanzamiento de Marca de Licor</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">13 oct 2026, 8:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">13 oct 2026, 11:59 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Terraza</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Coctelería premium</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Valentina Gómez</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Presentación comercial cancelada por solicitud del patrocinador.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--error">Cancelado</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-006" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-006-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-006-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-006" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-006-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-006-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Lanzamiento de Marca de Licor"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-006-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-006-inicio" name="inicio" type="datetime-local" required value="2026-10-13T20:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-006-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-006-fin" name="fin" type="datetime-local" required value="2026-10-13T23:59"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-006-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-006-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Terraza"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-006-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-006-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium" selected>Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez" checked><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-006-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-006-descripcion" name="descripcion" maxlength="400" required>Presentación comercial cancelada por solicitud del patrocinador.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-006-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-006-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado" selected>Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-014" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-014-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-014-titulo">Evento: Brunch Dominical</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Brunch Dominical</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">20 oct 2026, 11:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">20 oct 2026, 5:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Terraza</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Fotografía y video</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Paula Arbeláez, Camila Restrepo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Brunch con música lounge y sesión de fotos para clientes VIP.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Completado</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-014" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-014-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-014-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-014" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-014-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-014-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Brunch Dominical"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-014-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-014-inicio" name="inicio" type="datetime-local" required value="2026-10-20T11:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-014-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-014-fin" name="fin" type="datetime-local" required value="2026-10-20T17:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-014-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-014-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Terraza"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-014-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-014-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video" selected>Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo" checked><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez" checked><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-014-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-014-descripcion" name="descripcion" maxlength="400" required>Brunch con música lounge y sesión de fotos para clientes VIP.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-014-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-014-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado" selected>Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-003" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-003-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-003-titulo">Evento: Fiesta Privada Aniversario Empresarial</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Fiesta Privada Aniversario Empresarial</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">26 oct 2026, 8:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">27 oct 2026, 1:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Sala VIP 2</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Sala privada</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Sebastián Arango, Camila Restrepo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Evento corporativo para 60 invitados con servicio de mesa.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--proceso">En progreso</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-003" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-003-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-003-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-003" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-003-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-003-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Fiesta Privada Aniversario Empresarial"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-003-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-003-inicio" name="inicio" type="datetime-local" required value="2026-10-26T20:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-003-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-003-fin" name="fin" type="datetime-local" required value="2026-10-27T01:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-003-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-003-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Sala VIP 2"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-003-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-003-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada" selected>Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo" checked><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango" checked><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-003-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-003-descripcion" name="descripcion" maxlength="400" required>Evento corporativo para 60 invitados con servicio de mesa.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-003-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-003-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="En progreso" selected>En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-007" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-007-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-007-titulo">Evento: Noche Latina</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Noche Latina</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">29 oct 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">30 oct 2026, 3:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Salón principal</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Servicio de botella</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Valentina Gómez, Daniela Cardona</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Salsa, merengue y bachata con orquesta en vivo.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-007" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-007-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-007-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-007" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-007-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-007-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Noche Latina"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-007-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-007-inicio" name="inicio" type="datetime-local" required value="2026-10-29T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-007-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-007-fin" name="fin" type="datetime-local" required value="2026-10-30T03:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-007-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-007-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Salón principal"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-007-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-007-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella" selected>Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez" checked><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona" checked><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-007-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-007-descripcion" name="descripcion" maxlength="400" required>Salsa, merengue y bachata con orquesta en vivo.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-007-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-007-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-008" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-008-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-008-titulo">Evento: Sunset Terraza Sessions</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Sunset Terraza Sessions</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">31 oct 2026, 5:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">31 oct 2026, 11:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Terraza</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">DJ invitado</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Mateo Ruiz, Paula Arbeláez</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Atardecer con música house y barra abierta de cocteles.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-008" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-008-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-008-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-008" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-008-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-008-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Sunset Terraza Sessions"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-008-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-008-inicio" name="inicio" type="datetime-local" required value="2026-10-31T17:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-008-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-008-fin" name="fin" type="datetime-local" required value="2026-10-31T23:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-008-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-008-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Terraza"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-008-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-008-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado" selected>DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz" checked><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez" checked><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-008-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-008-descripcion" name="descripcion" maxlength="400" required>Atardecer con música house y barra abierta de cocteles.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-008-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-008-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-001" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-001-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-001-titulo">Evento: Noche Electrónica: Opening Season</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Noche Electrónica: Opening Season</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">02 nov 2026, 10:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">03 nov 2026, 4:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Salón principal</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">DJ invitado</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Camila Restrepo, Andrés Londoño</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Apertura de temporada con DJ internacional y pantallas LED.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-001" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-001-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-001-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-001" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-001-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-001-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Noche Electrónica: Opening Season"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-001-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-001-inicio" name="inicio" type="datetime-local" required value="2026-11-02T22:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-001-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-001-fin" name="fin" type="datetime-local" required value="2026-11-03T04:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-001-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-001-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Salón principal"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-001-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-001-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado" selected>DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo" checked><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño" checked><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-001-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-001-descripcion" name="descripcion" maxlength="400" required>Apertura de temporada con DJ internacional y pantallas LED.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-001-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-001-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-004" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-004-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-004-titulo">Evento: Halloween Night</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Halloween Night</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">03 nov 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">04 nov 2026, 4:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Todo el club</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Seguridad y acceso</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Andrés Londoño, Sebastián Arango, Kevin Montoya</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Fiesta de disfraces con concurso y acceso controlado por lista.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-004" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-004-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-004-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-004" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-004-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-004-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Halloween Night"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-004-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-004-inicio" name="inicio" type="datetime-local" required value="2026-11-03T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-004-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-004-fin" name="fin" type="datetime-local" required value="2026-11-04T04:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-004-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-004-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Todo el club"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-004-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-004-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso" selected>Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño" checked><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango" checked><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya" checked><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-004-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-004-descripcion" name="descripcion" maxlength="400" required>Fiesta de disfraces con concurso y acceso controlado por lista.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-004-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-004-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-009" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-009-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-009-titulo">Evento: Cumpleaños VIP Isabella</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Cumpleaños VIP Isabella</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">05 nov 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">06 nov 2026, 2:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Sala VIP 1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Cumpleaños VIP</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Daniela Cardona, Camila Restrepo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Celebración privada con torta, show de luces y botella de cortesía.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-009" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-009-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-009-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-009" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-009-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-009-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Cumpleaños VIP Isabella"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-009-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-009-inicio" name="inicio" type="datetime-local" required value="2026-11-05T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-009-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-009-fin" name="fin" type="datetime-local" required value="2026-11-06T02:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-009-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-009-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Sala VIP 1"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-009-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-009-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP" selected>Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo" checked><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona" checked><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-009-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-009-descripcion" name="descripcion" maxlength="400" required>Celebración privada con torta, show de luces y botella de cortesía.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-009-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-009-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-002" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-002-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-002-titulo">Evento: Noche de Reggaetón Clásico</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Noche de Reggaetón Clásico</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">09 nov 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">10 nov 2026, 3:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Terraza</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Coctelería premium</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Valentina Gómez, Paula Arbeláez</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Playlist de los clásicos del género y barra de cocteles de autor.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-002" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-002-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-002-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-002" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-002-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-002-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Noche de Reggaetón Clásico"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-002-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-002-inicio" name="inicio" type="datetime-local" required value="2026-11-09T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-002-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-002-fin" name="fin" type="datetime-local" required value="2026-11-10T03:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-002-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-002-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Terraza"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-002-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-002-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium" selected>Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez" checked><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez" checked><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-002-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-002-descripcion" name="descripcion" maxlength="400" required>Playlist de los clásicos del género y barra de cocteles de autor.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-002-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-002-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-013" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-013-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-013-titulo">Evento: Noche de Techno Underground</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Noche de Techno Underground</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">12 nov 2026, 11:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">13 nov 2026, 6:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Salón principal</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">DJ invitado</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Mateo Ruiz, Sebastián Arango</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Sesión de techno con DJs locales y visuales inmersivos.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-013" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-013-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-013-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-013" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-013-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-013-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Noche de Techno Underground"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-013-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-013-inicio" name="inicio" type="datetime-local" required value="2026-11-12T23:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-013-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-013-fin" name="fin" type="datetime-local" required value="2026-11-13T06:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-013-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-013-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Salón principal"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-013-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-013-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado" selected>DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango" checked><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz" checked><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-013-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-013-descripcion" name="descripcion" maxlength="400" required>Sesión de techno con DJs locales y visuales inmersivos.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-013-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-013-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-010" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-010-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-010-titulo">Evento: Noche de Salsa en Vivo</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Noche de Salsa en Vivo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">16 nov 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">17 nov 2026, 3:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Salón principal</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">—</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Mateo Ruiz, Daniela Cardona</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Orquesta en vivo y clases de salsa antes de abrir la pista.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-010" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-010-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-010-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-010" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-010-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-010-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Noche de Salsa en Vivo"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-010-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-010-inicio" name="inicio" type="datetime-local" required value="2026-11-16T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-010-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-010-fin" name="fin" type="datetime-local" required value="2026-11-17T03:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-010-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-010-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Salón principal"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-010-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-010-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática">Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo"><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño"><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez"><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango"><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona" checked><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz" checked><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-010-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-010-descripcion" name="descripcion" maxlength="400" required>Orquesta en vivo y clases de salsa antes de abrir la pista.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-010-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-010-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-ver-ev-011" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-ver-ev-011-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-ver-ev-011-titulo">Evento: Fiesta de Fin de Año</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Nombre</dt>
+            <dd class="molecula-detalle__valor">Fiesta de Fin de Año</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Inicio</dt>
+            <dd class="molecula-detalle__valor">30 dic 2026, 9:00 p. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fin</dt>
+            <dd class="molecula-detalle__valor">31 dic 2026, 5:00 a. m.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Ubicación</dt>
+            <dd class="molecula-detalle__valor">Todo el club</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Servicio</dt>
+            <dd class="molecula-detalle__valor">Decoración temática</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Empleados</dt>
+            <dd class="molecula-detalle__valor">Camila Restrepo, Andrés Londoño, Valentina Gómez, Sebastián Arango</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Descripción</dt>
+            <dd class="molecula-detalle__valor">Cuenta regresiva, brindis de medianoche y show de luces.</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eventos-editar-ev-011" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eventos-editar-ev-011-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eventos-editar-ev-011-titulo">Editar evento</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-eventos-editar-ev-011" data-modal-formulario aria-label="Editar evento">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-011-nombre">Nombre del evento</label><input class="atomo-campo" id="e-eventos-ev-011-nombre" name="nombre" type="text" required minlength="3" maxlength="100" value="Fiesta de Fin de Año"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-011-inicio">Fecha y hora de inicio</label><input class="atomo-campo" id="e-eventos-ev-011-inicio" name="inicio" type="datetime-local" required value="2026-12-30T21:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-011-fin">Fecha y hora de fin</label><input class="atomo-campo" id="e-eventos-ev-011-fin" name="fin" type="datetime-local" required value="2026-12-31T05:00"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-011-ubicacion">Ubicación</label><input class="atomo-campo" id="e-eventos-ev-011-ubicacion" name="ubicacion" type="text" required maxlength="80" value="Todo el club"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="e-eventos-ev-011-servicio">Servicio asociado</label><select class="atomo-campo" id="e-eventos-ev-011-servicio" name="servicio"><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa VIP">Mesa VIP</option><option class="atomo-campo__opcion" value="Sala privada">Sala privada</option><option class="atomo-campo__opcion" value="DJ invitado">DJ invitado</option><option class="atomo-campo__opcion" value="Coctelería premium">Coctelería premium</option><option class="atomo-campo__opcion" value="Seguridad y acceso">Seguridad y acceso</option><option class="atomo-campo__opcion" value="Decoración temática" selected>Decoración temática</option><option class="atomo-campo__opcion" value="Fotografía y video">Fotografía y video</option><option class="atomo-campo__opcion" value="Servicio de botella">Servicio de botella</option><option class="atomo-campo__opcion" value="Cumpleaños VIP">Cumpleaños VIP</option><option class="atomo-campo__opcion" value="Fiesta privada">Fiesta privada</option></select></div>
+            <fieldset class="molecula-campo-completo molecula-campo-completo--ancho">
+              <legend class="atomo-etiqueta">Empleados asignados</legend>
+              <div class="molecula-grupo-casillas"><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Camila Restrepo" checked><span class="molecula-casilla__texto">Camila Restrepo</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Andrés Londoño" checked><span class="molecula-casilla__texto">Andrés Londoño</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Valentina Gómez" checked><span class="molecula-casilla__texto">Valentina Gómez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Sebastián Arango" checked><span class="molecula-casilla__texto">Sebastián Arango</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Daniela Cardona"><span class="molecula-casilla__texto">Daniela Cardona</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Mateo Ruiz"><span class="molecula-casilla__texto">Mateo Ruiz</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Isabela Torres"><span class="molecula-casilla__texto">Isabela Torres</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Paula Arbeláez"><span class="molecula-casilla__texto">Paula Arbeláez</span></label><label class="molecula-casilla"><input class="molecula-casilla__entrada" type="checkbox" name="empleados" value="Kevin Montoya"><span class="molecula-casilla__texto">Kevin Montoya</span></label></div>
+            </fieldset>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-011-descripcion">Descripción</label><textarea class="atomo-campo atomo-campo--area" id="e-eventos-ev-011-descripcion" name="descripcion" maxlength="400" required>Cuenta regresiva, brindis de medianoche y show de luces.</textarea></div>
+            <div class="molecula-campo-completo molecula-campo-completo--ancho"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-eventos-ev-011-estado">Estado del evento</label><select class="atomo-campo" id="e-eventos-ev-011-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="En progreso">En progreso</option><option class="atomo-campo__opcion" value="Completado">Completado</option><option class="atomo-campo__opcion" value="Cancelado">Cancelado</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eliminar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eliminar-titulo">
+      <div class="organismo-modal__caja organismo-modal__caja--pequena" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eliminar-titulo">Eliminar registro</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <p class="atomo-texto--secundario">¿Seguro que quieres eliminar este registro? Esta acción no se puede deshacer.</p>
+        <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-modal__pie">
+      <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+      <button class="atomo-boton atomo-boton--peligro" type="button" data-eliminar-confirmar>Eliminar</button>
+    </div>
+      </div>
+    </div>
+    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/modales.js" defer></script>
+    <script src="../../js/buscador.js" defer></script>
+  </body>
+</html>

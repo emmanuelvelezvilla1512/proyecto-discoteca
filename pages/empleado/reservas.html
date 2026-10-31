@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reservas · IBIZA NIGHT CLUB</title>
+    <!-- Orden de Atomic Design: variables, reset, átomos, moléculas, organismos, plantillas, páginas -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/atoms.css">
+    <link rel="stylesheet" href="../../css/molecules.css">
+    <link rel="stylesheet" href="../../css/organisms.css">
+    <link rel="stylesheet" href="../../css/templates.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+  </head>
+  <body class="plantilla-cuerpo">
+    <a class="atomo-enlace atomo-enlace--salto" href="#contenido">Saltar al contenido</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="atomo-sprite" aria-hidden="true">
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </symbol>
+      <symbol id="i-glass" viewBox="0 0 24 24">
+        <path d="M8 22h8M12 15v7M5 3h14l-7 12z"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M18 20V10M12 20V4M6 20v-6"/>
+      </symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <path d="M3 6h18"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <path d="M9 22V12h6v10"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+    </svg>
+    <div class="plantilla-administrativa">
+      <!-- ORGANISMO: menú lateral (cada rol tiene el suyo) -->
+      <aside class="organismo-menu-lateral" id="menu-lateral" aria-label="Menú lateral">
+        <a class="atomo-logo" href="../../index.html" aria-label="IBIZA NIGHT CLUB, ir al inicio"><span class="atomo-logo__marca"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span><span class="atomo-logo__nombre">IBIZA<span class="atomo-logo__subtitulo">NIGHT CLUB</span></span></a>
+        <nav aria-label="Menú principal">
+          <ul class="organismo-menu-lateral__lista">
+            <li><a class="organismo-menu-lateral__enlace" href="inicio.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-home"/></svg><span>Inicio</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="clientes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Clientes</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace es-activo" href="reservas.html" aria-current="page"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Reservas</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="eventos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><span>Eventos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="servicios.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg><span>Servicios</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="compras.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-cart"/></svg><span>Compras</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="inventario.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-box"/></svg><span>Inventario</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="pedidos.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg><span>Pedidos</span></a></li>
+            <li><a class="organismo-menu-lateral__enlace" href="reportes.html"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><span>Reportes</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="plantilla-administrativa__contenido">
+        <!-- ORGANISMO: encabezado con el usuario -->
+        <header class="organismo-encabezado">
+          <div class="organismo-encabezado__titulo">
+        <button class="atomo-boton atomo-boton--secundario organismo-encabezado__boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-lateral" aria-label="Abrir o cerrar el menú"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+        <strong class="organismo-encabezado__marca">IBIZA NIGHT CLUB</strong>
+      </div>
+          <div class="organismo-encabezado__usuario">
+        <span class="organismo-encabezado__nombre">Camila Restrepo</span>
+        <span class="atomo-insignia atomo-insignia--neutra">Empleado</span>
+        <a class="atomo-boton atomo-boton--secundario atomo-boton--chico" href="../login.html" aria-label="Cerrar sesión"><svg class="atomo-icono" aria-hidden="true" focusable="false"><use href="#i-logout"/></svg><span class="organismo-encabezado__salir-texto">Cerrar sesión</span></a>
+      </div>
+        </header>
+        <main class="plantilla-administrativa__principal" id="contenido">
+          <h1 class="atomo-solo-lectores">Reservas</h1>
+          <div class="plantilla-listado">
+            <section class="organismo-tarjeta" aria-labelledby="titulo-reservas">
+              <div class="organismo-tarjeta__titulo">
+                <h2 class="atomo-titulo--seccion" id="titulo-reservas">Reservas</h2>
+                <button class="atomo-boton atomo-boton--primario" type="button" data-modal-abrir="modal-reservas-agregar" aria-haspopup="dialog" aria-controls="modal-reservas-agregar" aria-expanded="false">Agregar reserva</button>
+              </div>
+              <div class="organismo-barra-listado">
+                <div class="organismo-barra-listado__buscador">
+                  <label class="atomo-etiqueta" for="buscar-reservas">Buscar</label>
+                  <div class="molecula-buscador">
+                    <svg class="atomo-icono molecula-buscador__icono" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
+                    <input class="molecula-buscador__campo" id="buscar-reservas" type="search" placeholder="Buscar en reservas…" data-filtrar="tabla-reservas">
+                  </div>
+                </div>
+                <div class="molecula-campo-completo"><label class="atomo-etiqueta" for="filtro-reservas-0">Estado</label><select class="atomo-campo" id="filtro-reservas-0" data-filtrar="tabla-reservas" data-filtrar-columna="5"><option class="atomo-campo__opcion" value="">Todos</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada">Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+              </div>
+              <div class="organismo-tabla__contenedor">
+                <table class="organismo-tabla" id="tabla-reservas" aria-labelledby="titulo-reservas">
+                  <thead>
+                    <tr>
+                      <th class="organismo-tabla__cabecera" scope="col">Reserva</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Cliente</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Mesa</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Fecha</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Personas</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Estado</th>
+                      <th class="organismo-tabla__cabecera" scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-001" data-fila>
+                      <td class="organismo-tabla__celda">RES-001</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mariana Zapata</td>
+                      <td class="organismo-tabla__celda">Sala VIP 1</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">26 oct 2026</td>
+                      <td class="organismo-tabla__celda">6</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-001" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-001" aria-expanded="false" aria-label="Ver reserva RES-001">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-001" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-001" aria-expanded="false" aria-label="Editar reserva RES-001">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-001" aria-label="Eliminar reserva RES-001">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-002" data-fila>
+                      <td class="organismo-tabla__celda">RES-002</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Juan Pablo Duque</td>
+                      <td class="organismo-tabla__celda">Mesa 08</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">27 oct 2026</td>
+                      <td class="organismo-tabla__celda">4</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-002" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-002" aria-expanded="false" aria-label="Ver reserva RES-002">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-002" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-002" aria-expanded="false" aria-label="Editar reserva RES-002">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-002" aria-label="Eliminar reserva RES-002">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-003" data-fila>
+                      <td class="organismo-tabla__celda">RES-003</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Sofía Henao</td>
+                      <td class="organismo-tabla__celda">Mesa 03</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">27 oct 2026</td>
+                      <td class="organismo-tabla__celda">5</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-003" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-003" aria-expanded="false" aria-label="Ver reserva RES-003">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-003" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-003" aria-expanded="false" aria-label="Editar reserva RES-003">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-003" aria-label="Eliminar reserva RES-003">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-004" data-fila>
+                      <td class="organismo-tabla__celda">RES-004</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mariana Zapata</td>
+                      <td class="organismo-tabla__celda">Mesa 12</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">03 nov 2026</td>
+                      <td class="organismo-tabla__celda">8</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-004" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-004" aria-expanded="false" aria-label="Ver reserva RES-004">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-004" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-004" aria-expanded="false" aria-label="Editar reserva RES-004">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-004" aria-label="Eliminar reserva RES-004">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-005" data-fila>
+                      <td class="organismo-tabla__celda">RES-005</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Santiago Ríos</td>
+                      <td class="organismo-tabla__celda">Terraza 1</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">28 oct 2026</td>
+                      <td class="organismo-tabla__celda">3</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-005" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-005" aria-expanded="false" aria-label="Ver reserva RES-005">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-005" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-005" aria-expanded="false" aria-label="Editar reserva RES-005">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-005" aria-label="Eliminar reserva RES-005">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-006" data-fila>
+                      <td class="organismo-tabla__celda">RES-006</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Manuela Echeverri</td>
+                      <td class="organismo-tabla__celda">Sala VIP 2</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">02 nov 2026</td>
+                      <td class="organismo-tabla__celda">10</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-006" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-006" aria-expanded="false" aria-label="Ver reserva RES-006">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-006" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-006" aria-expanded="false" aria-label="Editar reserva RES-006">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-006" aria-label="Eliminar reserva RES-006">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-007" data-fila>
+                      <td class="organismo-tabla__celda">RES-007</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Tomás Giraldo</td>
+                      <td class="organismo-tabla__celda">Mesa 05</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">21 oct 2026</td>
+                      <td class="organismo-tabla__celda">4</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--error">Cancelada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-007" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-007" aria-expanded="false" aria-label="Ver reserva RES-007">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-007" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-007" aria-expanded="false" aria-label="Editar reserva RES-007">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-007" aria-label="Eliminar reserva RES-007">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-008" data-fila>
+                      <td class="organismo-tabla__celda">RES-008</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Juan Pablo Duque</td>
+                      <td class="organismo-tabla__celda">Mesa 10</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">09 nov 2026</td>
+                      <td class="organismo-tabla__celda">2</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-008" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-008" aria-expanded="false" aria-label="Ver reserva RES-008">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-008" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-008" aria-expanded="false" aria-label="Editar reserva RES-008">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-008" aria-label="Eliminar reserva RES-008">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-009" data-fila>
+                      <td class="organismo-tabla__celda">RES-009</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Luciana Mesa</td>
+                      <td class="organismo-tabla__celda">Terraza 2</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">04 nov 2026</td>
+                      <td class="organismo-tabla__celda">6</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-009" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-009" aria-expanded="false" aria-label="Ver reserva RES-009">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-009" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-009" aria-expanded="false" aria-label="Editar reserva RES-009">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-009" aria-label="Eliminar reserva RES-009">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-010" data-fila>
+                      <td class="organismo-tabla__celda">RES-010</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Nicolás Posada</td>
+                      <td class="organismo-tabla__celda">Mesa 01</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">29 oct 2026</td>
+                      <td class="organismo-tabla__celda">4</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-010" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-010" aria-expanded="false" aria-label="Ver reserva RES-010">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-010" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-010" aria-expanded="false" aria-label="Editar reserva RES-010">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-010" aria-label="Eliminar reserva RES-010">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-011" data-fila>
+                      <td class="organismo-tabla__celda">RES-011</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Esteban Cadavid</td>
+                      <td class="organismo-tabla__celda">Sala VIP 3</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">05 nov 2026</td>
+                      <td class="organismo-tabla__celda">12</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-011" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-011" aria-expanded="false" aria-label="Ver reserva RES-011">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-011" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-011" aria-expanded="false" aria-label="Editar reserva RES-011">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-011" aria-label="Eliminar reserva RES-011">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" id="fila-reservas-res-012" data-fila>
+                      <td class="organismo-tabla__celda">RES-012</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--principal">Mariana Zapata</td>
+                      <td class="organismo-tabla__celda">Mesa 02</td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--fecha">14 oct 2026</td>
+                      <td class="organismo-tabla__celda">4</td>
+                      <td class="organismo-tabla__celda"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></td>
+                      <td class="organismo-tabla__celda organismo-tabla__celda--acciones">
+                        <div class="organismo-tabla__acciones"><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-ver-res-012" aria-haspopup="dialog" aria-controls="modal-reservas-ver-res-012" aria-expanded="false" aria-label="Ver reserva RES-012">Ver</button><button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-abrir="modal-reservas-editar-res-012" aria-haspopup="dialog" aria-controls="modal-reservas-editar-res-012" aria-expanded="false" aria-label="Editar reserva RES-012">Editar</button><button class="atomo-boton atomo-boton--peligro atomo-boton--chico" type="button" data-modal-abrir="modal-eliminar" aria-haspopup="dialog" aria-controls="modal-eliminar" aria-expanded="false" data-fila-objetivo="fila-reservas-res-012" aria-label="Eliminar reserva RES-012">Eliminar</button></div>
+                      </td>
+                    </tr>
+                    <tr class="organismo-tabla__fila" data-sin-resultados hidden>
+                      <td class="organismo-tabla__celda" colspan="7">No se encontraron registros con los criterios indicados.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-agregar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-agregar-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-agregar-titulo">Agregar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-agregar" data-modal-formulario aria-label="Agregar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-reservas-clienteId">Cliente</label><select class="atomo-campo" id="a-reservas-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-reservas-mesa">Mesa o sala</label><select class="atomo-campo" id="a-reservas-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-reservas-fecha">Fecha</label><input class="atomo-campo" id="a-reservas-fecha" name="fecha" type="date" required></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-reservas-personas">Personas</label><input class="atomo-campo" id="a-reservas-personas" name="personas" type="number" required min="1" max="50"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="a-reservas-estado">Estado</label><select class="atomo-campo" id="a-reservas-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada">Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-001" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-001-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-001-titulo">Reserva: RES-001</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-001</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Mariana Zapata</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Sala VIP 1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">26 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">6</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-001" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-001-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-001-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-001" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-001-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-001-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01" selected>Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-001-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-001-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1" selected>Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-001-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-001-fecha" name="fecha" type="date" required value="2026-10-26"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-001-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-001-personas" name="personas" type="number" required min="1" max="50" value="6"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-001-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-001-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada" selected>Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-002" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-002-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-002-titulo">Reserva: RES-002</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-002</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Juan Pablo Duque</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Mesa 08</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">27 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">4</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-002" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-002-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-002-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-002" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-002-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-002-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02" selected>Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-002-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-002-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08" selected>Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-002-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-002-fecha" name="fecha" type="date" required value="2026-10-27"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-002-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-002-personas" name="personas" type="number" required min="1" max="50" value="4"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-002-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-002-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="Confirmada">Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-003" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-003-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-003-titulo">Reserva: RES-003</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-003</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Sofía Henao</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Mesa 03</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">27 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">5</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-003" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-003-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-003-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-003" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-003-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-003-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03" selected>Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-003-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-003-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03" selected>Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-003-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-003-fecha" name="fecha" type="date" required value="2026-10-27"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-003-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-003-personas" name="personas" type="number" required min="1" max="50" value="5"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-003-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-003-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada" selected>Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-004" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-004-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-004-titulo">Reserva: RES-004</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-004</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Mariana Zapata</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Mesa 12</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">03 nov 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">8</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-004" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-004-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-004-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-004" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-004-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-004-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01" selected>Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-004-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-004-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12" selected>Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-004-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-004-fecha" name="fecha" type="date" required value="2026-11-03"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-004-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-004-personas" name="personas" type="number" required min="1" max="50" value="8"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-004-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-004-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="Confirmada">Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-005" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-005-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-005-titulo">Reserva: RES-005</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-005</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Santiago Ríos</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Terraza 1</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">28 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">3</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-005" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-005-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-005-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-005" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-005-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-005-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04" selected>Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-005-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-005-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1" selected>Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-005-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-005-fecha" name="fecha" type="date" required value="2026-10-28"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-005-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-005-personas" name="personas" type="number" required min="1" max="50" value="3"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-005-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-005-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada" selected>Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-006" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-006-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-006-titulo">Reserva: RES-006</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-006</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Manuela Echeverri</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Sala VIP 2</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">02 nov 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">10</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-006" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-006-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-006-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-006" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-006-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-006-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05" selected>Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-006-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-006-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2" selected>Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-006-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-006-fecha" name="fecha" type="date" required value="2026-11-02"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-006-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-006-personas" name="personas" type="number" required min="1" max="50" value="10"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-006-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-006-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada" selected>Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-007" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-007-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-007-titulo">Reserva: RES-007</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-007</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Tomás Giraldo</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Mesa 05</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">21 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">4</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--error">Cancelada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-007" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-007-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-007-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-007" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-007-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-007-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06" selected>Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-007-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-007-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05" selected>Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-007-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-007-fecha" name="fecha" type="date" required value="2026-10-21"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-007-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-007-personas" name="personas" type="number" required min="1" max="50" value="4"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-007-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-007-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada">Confirmada</option><option class="atomo-campo__opcion" value="Cancelada" selected>Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-008" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-008-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-008-titulo">Reserva: RES-008</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-008</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Juan Pablo Duque</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Mesa 10</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">09 nov 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">2</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-008" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-008-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-008-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-008" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-008-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-008-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02" selected>Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-008-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-008-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10" selected>Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-008-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-008-fecha" name="fecha" type="date" required value="2026-11-09"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-008-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-008-personas" name="personas" type="number" required min="1" max="50" value="2"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-008-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-008-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="Confirmada">Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-009" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-009-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-009-titulo">Reserva: RES-009</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-009</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Luciana Mesa</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Terraza 2</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">04 nov 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">6</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-009" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-009-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-009-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-009" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-009-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-009-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07" selected>Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-009-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-009-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2" selected>Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-009-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-009-fecha" name="fecha" type="date" required value="2026-11-04"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-009-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-009-personas" name="personas" type="number" required min="1" max="50" value="6"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-009-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-009-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada" selected>Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-010" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-010-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-010-titulo">Reserva: RES-010</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-010</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Nicolás Posada</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Mesa 01</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">29 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">4</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--aviso">Pendiente</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-010" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-010-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-010-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-010" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-010-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-010-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08" selected>Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-010-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-010-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01" selected>Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-010-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-010-fecha" name="fecha" type="date" required value="2026-10-29"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-010-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-010-personas" name="personas" type="number" required min="1" max="50" value="4"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-010-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-010-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente" selected>Pendiente</option><option class="atomo-campo__opcion" value="Confirmada">Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-011" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-011-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-011-titulo">Reserva: RES-011</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-011</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Esteban Cadavid</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Sala VIP 3</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">05 nov 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">12</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-011" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-011-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-011-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-011" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-011-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-011-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01">Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10" selected>Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-011-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-011-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02">Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3" selected>Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-011-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-011-fecha" name="fecha" type="date" required value="2026-11-05"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-011-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-011-personas" name="personas" type="number" required min="1" max="50" value="12"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-011-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-011-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada" selected>Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-ver-res-012" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-ver-res-012-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-ver-res-012-titulo">Reserva: RES-012</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <dl class="molecula-detalle">
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Reserva</dt>
+            <dd class="molecula-detalle__valor">RES-012</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Cliente</dt>
+            <dd class="molecula-detalle__valor">Mariana Zapata</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Mesa</dt>
+            <dd class="molecula-detalle__valor">Mesa 02</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Fecha</dt>
+            <dd class="molecula-detalle__valor">14 oct 2026</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Personas</dt>
+            <dd class="molecula-detalle__valor">4</dd>
+          </div>
+          <div class="molecula-detalle__fila">
+            <dt class="molecula-detalle__termino">Estado</dt>
+            <dd class="molecula-detalle__valor"><span class="atomo-insignia atomo-insignia--ok">Confirmada</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-reservas-editar-res-012" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-reservas-editar-res-012-titulo">
+      <div class="organismo-modal__caja" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-reservas-editar-res-012-titulo">Editar reserva</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <form class="organismo-formulario" id="form-reservas-editar-res-012" data-modal-formulario aria-label="Editar reserva">
+          <div class="organismo-formulario__rejilla">
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-012-clienteId">Cliente</label><select class="atomo-campo" id="e-reservas-res-012-clienteId" name="clienteId" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="CLI-01" selected>Mariana Zapata</option><option class="atomo-campo__opcion" value="CLI-02">Juan Pablo Duque</option><option class="atomo-campo__opcion" value="CLI-03">Sofía Henao</option><option class="atomo-campo__opcion" value="CLI-04">Santiago Ríos</option><option class="atomo-campo__opcion" value="CLI-05">Manuela Echeverri</option><option class="atomo-campo__opcion" value="CLI-06">Tomás Giraldo</option><option class="atomo-campo__opcion" value="CLI-07">Luciana Mesa</option><option class="atomo-campo__opcion" value="CLI-08">Nicolás Posada</option><option class="atomo-campo__opcion" value="CLI-10">Esteban Cadavid</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-012-mesa">Mesa o sala</label><select class="atomo-campo" id="e-reservas-res-012-mesa" name="mesa" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Mesa 01">Mesa 01</option><option class="atomo-campo__opcion" value="Mesa 02" selected>Mesa 02</option><option class="atomo-campo__opcion" value="Mesa 03">Mesa 03</option><option class="atomo-campo__opcion" value="Mesa 05">Mesa 05</option><option class="atomo-campo__opcion" value="Mesa 08">Mesa 08</option><option class="atomo-campo__opcion" value="Mesa 10">Mesa 10</option><option class="atomo-campo__opcion" value="Mesa 12">Mesa 12</option><option class="atomo-campo__opcion" value="Sala VIP 1">Sala VIP 1</option><option class="atomo-campo__opcion" value="Sala VIP 2">Sala VIP 2</option><option class="atomo-campo__opcion" value="Sala VIP 3">Sala VIP 3</option><option class="atomo-campo__opcion" value="Terraza 1">Terraza 1</option><option class="atomo-campo__opcion" value="Terraza 2">Terraza 2</option></select></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-012-fecha">Fecha</label><input class="atomo-campo" id="e-reservas-res-012-fecha" name="fecha" type="date" required value="2026-10-14"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-012-personas">Personas</label><input class="atomo-campo" id="e-reservas-res-012-personas" name="personas" type="number" required min="1" max="50" value="4"></div>
+            <div class="molecula-campo-completo"><label class="atomo-etiqueta atomo-etiqueta--requerida" for="e-reservas-res-012-estado">Estado</label><select class="atomo-campo" id="e-reservas-res-012-estado" name="estado" required><option class="atomo-campo__opcion" value="">Selecciona una opción</option><option class="atomo-campo__opcion" value="Pendiente">Pendiente</option><option class="atomo-campo__opcion" value="Confirmada" selected>Confirmada</option><option class="atomo-campo__opcion" value="Cancelada">Cancelada</option></select></div>
+          </div>
+          <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-formulario__pie">
+            <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+            <button class="atomo-boton atomo-boton--primario" type="submit">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="organismo-modal" id="modal-eliminar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-eliminar-titulo">
+      <div class="organismo-modal__caja organismo-modal__caja--pequena" data-modal-caja tabindex="-1">
+        <div class="organismo-modal__cabecera">
+          <h2 class="atomo-titulo--seccion" id="modal-eliminar-titulo">Eliminar registro</h2>
+          <button class="atomo-boton atomo-boton--secundario atomo-boton--chico" type="button" data-modal-cerrar aria-label="Cerrar ventana">✕</button>
+        </div>
+        <p class="atomo-texto--secundario">¿Seguro que quieres eliminar este registro? Esta acción no se puede deshacer.</p>
+        <div class="molecula-grupo-botones molecula-grupo-botones--derecha organismo-modal__pie">
+      <button class="atomo-boton atomo-boton--secundario" type="button" data-modal-cerrar>Cancelar</button>
+      <button class="atomo-boton atomo-boton--peligro" type="button" data-eliminar-confirmar>Eliminar</button>
+    </div>
+      </div>
+    </div>
+    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/modales.js" defer></script>
+    <script src="../../js/buscador.js" defer></script>
+  </body>
+</html>
